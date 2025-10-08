@@ -1,0 +1,55 @@
+/* Estilos generales para inputs y selects en SweetAlert2 */
+.swal2-input,
+.swal2-select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde-input);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Cambiar borde al enfocar */
+.swal2-input:focus,
+.swal2-select:focus {
+    border-color: var(--color-borde-input-focus);
+    outline: none;
+}
+
+/* Estilo para enlace de registro */
+#linkRegistro, #linkLogin {
+    color: var(--color-link-registro);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#linkRegistro:hover, #linkLogin:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para párrafo */
+.swal2-html-container p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-parrafo);
+    margin-top: 10px;
+}
+
+/* Botones de SweetAlert2 personalizados */
+.swal2-confirm {
+    background-color: var(--color-link-registro) !important;
+    color: var(--color-boton-iniciarSesion-letra) !important;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.swal2-cancel {
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}

@@ -1,0 +1,148 @@
+@import url('root/root.css');
+@import url('./styleForm.css');
+@import url('./styleBeneficiario.css');
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar { width: 1px; }
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-color-fondo);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* header - encabezado */
+header {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  height: auto;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  color: var(--color-titulo);
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+/* header - imagen Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* header - navegacion  */
+.navegacion ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* .navegacion button {
+  background: var(--primary-color-boton);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+} */
+
+.navegacion ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacion a {
+  color: var(--primary-color-letra);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+/* .navegacion a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: var(--primary-color-boton);
+  transition: width 0.3s;
+}
+
+.navegacion a:hover {
+  color: var(--primary-color-boton);
+} */
+
+.navegacion a:hover::after {
+  width: 100%;
+}
+
+/* secciones */
+main {
+  padding-top: 15vh;
+}
+
+section {
+  min-height: 70vh;
+  padding: 60px 20px;
+  text-align: center;
+  scroll-margin-top: 12vh;
+}
+
+section:nth-child(even) {
+  background: linear-gradient(var(--gradient-angle), var(--gradient-start), var(--gradient-end));
+  color: var(--primary-color-letra);
+  border-radius: 12px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contenedores {
+  color: var(--primary-color-letra);
+}
+
+#btnLogin {
+  background: var(--color-boton-iniciarSesion);
+  color: var(--color-boton-iniciarSesion-letra);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* footer - pie de pagina */
+footer {
+  background: var(--secondary-color-fondo);
+  color: var(--primary-color-letra);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
