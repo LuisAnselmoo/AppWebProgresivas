@@ -1,0 +1,402 @@
+@import url('./root.css');
+@import url('./header.css');
+
+.perfil-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+/* ==== CONTENEDOR PRINCIPAL ==== */
+.perfil-container {
+  background-color: var(--color-card-perfil);
+  box-shadow: var(--sombra-perfil);
+  border-radius: 16px;
+  padding: 25px 30px;
+  width: 850px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==== ENCABEZADO DEL PERFIL ==== */
+.perfil-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+}
+
+.foto-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.foto-preview {
+  width: 140px;
+  height: 140px;
+  background: var(--color-input-fondo);
+  border: 2px dashed var(--color-input-borde);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.foto-preview:hover {
+  border-color: var(--color-input-focus);
+  background-color: #e9f8f8;
+}
+
+.icono-camara {
+  font-size: 2rem;
+  color: var(--color-input-focus);
+  pointer-events: none;
+}
+
+#inputFoto {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* ==== DATOS PRINCIPALES ==== */
+.datos-principales {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+
+.datos-principales label {
+  font-weight: 600;
+  color: var(--color-label-perfil);
+}
+
+.datos-principales input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-input-borde);
+  background-color: var(--color-input-fondo);
+  transition: border-color 0.2s ease;
+}
+
+.datos-principales input:focus {
+  outline: none;
+  border-color: var(--color-input-focus);
+}
+
+/* ==== FORMULARIO COMPLETO ==== */
+.perfil-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.columna label {
+  font-weight: 600;
+  color: var(--color-label-perfil);
+}
+
+.columna input,
+.columna textarea {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-input-borde);
+  background-color: var(--color-input-fondo);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.columna input:focus,
+.columna textarea:focus {
+  outline: none;
+  border-color: var(--color-input-focus);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ==== ASIDE ACCIONES ==== */
+.acciones-perfil {
+  background: var(--color-card-perfil);
+  box-shadow: var(--sombra-perfil);
+  border-radius: 16px;
+  padding: 20px 25px;
+  width: 260px;
+  height: fit-content;
+}
+
+.acciones-perfil h3 {
+  color: var(--color-titulo-perfil);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ==== BOTONES ==== */
+.acciones-perfil button {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+
+/* Estado hover general */
+.acciones-perfil button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+/* Estado deshabilitado */
+.acciones-perfil button:disabled {
+  background-color: #cbd5e1 !important;
+  /* gris suave */
+  color: #f8fafc !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+/* ==== COLORES DE BOTONES ==== */
+.btn-verde {
+  background-color: var(--btn-verde);
+}
+
+.btn-verde:hover:not(:disabled) {
+  background-color: var(--btn-verde-hover);
+}
+
+.btn-azul {
+  background-color: var(--btn-azul);
+}
+
+.btn-azul:hover:not(:disabled) {
+  background-color: var(--btn-azul-hover);
+}
+
+.btn-gris {
+  background-color: var(--btn-gris);
+  color: var(--color-texto-perfil);
+}
+
+.btn-gris:hover:not(:disabled) {
+  background-color: var(--btn-gris-hover);
+}
+
+.btn-amarillo {
+  background-color: var(--btn-amarillo);
+}
+
+.btn-amarillo:hover:not(:disabled) {
+  background-color: var(--btn-amarillo-hover);
+}
+
+.btn-rojo {
+  background-color: var(--btn-rojo);
+}
+
+.btn-rojo:hover:not(:disabled) {
+  background-color: var(--btn-rojo-hover);
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+  .perfil-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .perfil-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 20px;
+  }
+
+  .perfil-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .foto-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .datos-principales {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .perfil-form {
+    grid-template-columns: 1fr;
+  }
+
+  .acciones-perfil {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .acciones-perfil button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Celulares grandes y medianos*/
+@media (max-width: 768px) {
+  .perfil-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px 15px;
+  }
+
+  .perfil-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foto-container {
+    width: 110px;
+    height: 110px;
+  }
+
+  .foto-preview {
+    width: 110px;
+    height: 110px;
+  }
+
+  .datos-principales {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .columna {
+    gap: 10px;
+  }
+
+  .columna input,
+  .columna textarea {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+
+  .acciones-perfil {
+    padding: 18px;
+  }
+
+  .acciones-perfil button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .perfil-container {
+    max-width: 90%;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .perfil-header {
+    gap: 15px;
+  }
+
+  .foto-container {
+    width: 95px;
+    height: 95px;
+  }
+
+  .foto-preview {
+    width: 95px;
+    height: 95px;
+    border: 2px solid var(--color-input-borde);
+  }
+
+  .icono-camara {
+    font-size: 1.5rem;
+  }
+
+  .datos-principales label,
+  .columna label {
+    font-size: 0.9rem;
+  }
+
+  .datos-principales input,
+  .columna input,
+  .columna textarea {
+    font-size: 0.9rem;
+    padding: 7px;
+  }
+
+  .perfil-form {
+    gap: 15px;
+  }
+
+  .acciones-perfil {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .acciones-perfil h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .acciones-perfil button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Muy pequeños*/
+@media (max-width: 360px) {
+  .perfil-container {
+    padding: 10px;
+  }
+
+  .perfil-header {
+    gap: 10px;
+  }
+
+  .datos-principales {
+    gap: 8px;
+  }
+
+  .columna {
+    gap: 8px;
+  }
+
+  .acciones-perfil button {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}

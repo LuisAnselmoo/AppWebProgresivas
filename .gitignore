@@ -18,3 +18,37 @@ Thumbs.db
 /build
 /.next
 /out
+
+# Node / Nest
+.npm/
+.nyc_output/
+coverage/
+.tmp/
+*.log
+*.pid
+*.seed
+*.tgz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment & Secrets
+firebase-debug.log
+backend/firebase/*.json
+*.key.json
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Docker / otros
+docker-compose.override.yml
+
+# Artefactos temporales
+*.cache/

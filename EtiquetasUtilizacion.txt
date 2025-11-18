@@ -1,6 +1,0 @@
-<header> -> título y navegación principal.
-<nav> → enlaces del menú.
-<main> → todo el contenido principal.
-<section> → agrupa parte (inicio, productos, contacto, login…).
-<article> → piezas de contenido independientes (como cada producto).
-<footer> → pie de página.

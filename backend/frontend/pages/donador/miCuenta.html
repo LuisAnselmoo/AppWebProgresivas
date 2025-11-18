@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/miCuenta.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon">
+  <title>EcoMarket</title>
+</head>
+
+<body>
+  <!-- encabezado -->
+  <header class="header">
+    <div class="logo">
+      <a href="#Inicio">
+        <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+      </a>
+      <h1>EcoMarket</h1>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="navegacion" id="navMenu">
+      <ul>
+        <li><a href="HomeDonador.html" class="active">Inicio</a></li>
+        <li><a href="verBeneficiarios.html">Beneficiarios</a></li>
+        <li><a href="Donaciones.html">Donaciones</a></li>
+        <li><a href="misEntregas.html">Mis Entregas</a></li>
+      </ul>
+
+      <div class="perfil-menu" id="perfilMenu">
+        <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+          <i class="fa-regular fa-user"></i>
+          <span id="notif" class="notif">0</span>
+        </button>
+
+        <ul class="dropdown" id="perfilDropdown">
+          <li><a href="miCuenta.html">Mi Perfil</a></li>
+
+          <li class="menu-item-with-badge">
+            <a href="#" id="verMensajes">
+              <i class="fa-regular fa-comments"></i> Mensajes
+              <span id="badgeMensajes" class="badge">0</span>
+            </a>
+          </li>
+
+          <li class="menu-item-with-badge">
+            <a href="#" id="btnNotificaciones">
+              <i class="fa-regular fa-bell"></i> Notificaciones
+              <span id="badgeNotificaciones" class="badge">0</span>
+            </a>
+          </li>
+
+          <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <main class="perfil-wrapper">
+    <section class="perfil-container">
+      <form id="perfilForm">
+        <!-- Imagen y nombre -->
+        <div class="perfil-header">
+          <div class="foto-container">
+            <div class="foto-preview">
+              <i class="fa-solid fa-camera icono-camara"></i>
+              <input type="file" id="inputFoto" accept="image/*" disabled />
+            </div>
+          </div>
+
+          <div class="datos-principales">
+            <label>Nombre</label>
+            <input type="text" id="nombre" />
+
+            <label>Apellido Paterno</label>
+            <input type="text" id="apellidoPaterno" />
+
+            <label>Apellido Materno</label>
+            <input type="text" id="apellidoMaterno" />
+
+            <label>Correo</label>
+            <input type="email" id="correo" disabled />
+          </div>
+        </div>
+
+        <!-- Datos empresa -->
+        <div class="perfil-form">
+          <div class="columna">
+            <label>Teléfono</label>
+            <input type="tel" id="telefono" />
+
+            <label>Tipo de Donador</label>
+            <input type="text" id="tipoDonador" />
+
+            <label>Nombre de Empresa</label>
+            <input type="text" id="nombreEmpresa" />
+
+            <label>RFC Empresa</label>
+            <input type="text" id="rfcEmpresa" />
+
+            <label>Nombre del Representante</label>
+            <input type="text" id="nombreRepresentante" />
+
+            <label>Cargo del Representante</label>
+            <input type="text" id="cargoRepresentante" />
+          </div>
+
+          <div class="columna">
+            <label>Correo Alterno</label>
+            <input type="email" id="correoAlterno" />
+
+            <label>Contacto Alterno</label>
+            <input type="text" id="contactoAlterno" />
+
+            <label>Calle</label>
+            <input type="text" id="calle" />
+
+            <label>Colonia</label>
+            <input type="text" id="colonia" />
+
+            <label>Municipio</label>
+            <input type="text" id="municipio" />
+
+            <label>Estado</label>
+            <input type="text" id="estado" />
+
+            <label>Referencias</label>
+            <textarea id="referencias"></textarea>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Panel lateral -->
+    <aside class="acciones-perfil">
+      <h3>Acciones</h3>
+      <button id="btnEditar" class="btn-verde">Editar</button>
+      <button id="btnGuardar" class="btn-azul" disabled>Guardar</button>
+      <button id="btnCancelar" class="btn-gris" disabled>Cancelar</button>
+      <hr>
+      <button id="btnSync" class="btn-amarillo">Sincronizar</button>
+      <button id="btnEliminar" class="btn-rojo">Eliminar Cuenta</button>
+    </aside>
+  </main>
+
+  <!-- archivos JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="./js/chat.js"></script>
+  <script type="module" src="./js/miCuenta.js"></script>
+</body>
+
+</html>

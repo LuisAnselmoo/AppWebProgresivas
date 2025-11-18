@@ -1,0 +1,227 @@
+/* HOME BENEFICIARIO - ECO MARKET */
+@import url('./root.css');
+@import url('./header.css');
+
+/* TÍTULO DE SECCIÓN */
+.titulo-seccion {
+  text-align: center;
+  color: var(--color-titulo-seccion);
+  font-size: var(--font-xl);
+  margin: 1.8rem 0;
+  font-weight: 600;
+}
+
+/* CONTENEDOR SLIDER */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.donaciones-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  position: relative;
+  height: 480px;
+}
+
+/* TARJETAS */
+.donacion-card {
+  position: absolute;
+  width: 360px;
+  background: var(--color-fondo-card);
+  border-radius: var(--borde-card);
+  padding: 1.6rem;
+  box-shadow: var(--card-sombra);
+  color: var(--card-texto);
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease,
+    z-index 0.3s ease;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  opacity: 0;
+}
+
+/* Card central (destacada) */
+.donacion-card.active {
+  transform: translateX(0) scale(1.2);
+  opacity: 1;
+  z-index: 4;
+  box-shadow: var(--card-hover-sombra);
+}
+
+/* Card izquierda */
+.donacion-card.left {
+  transform: translateX(-420px) scale(0.9);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Card derecha */
+.donacion-card.right {
+  transform: translateX(420px) scale(0.9);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Cards ocultas */
+.donacion-card.hidden {
+  transform: translateX(0) scale(0.7);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* BOTONES DE NAVEGACIÓN */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-fondo-botones-slider);
+  color: var(--color-texto-slider);
+  border: none;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: var(--sombra-card-slider);
+  transition: var(--transicion-slider);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-btn i {
+  pointer-events: none;
+}
+
+.slider-btn:hover {
+  background: var(--color-fondo-boton-slider-hover);
+  transform: translateY(-50%) scale(1.12);
+}
+
+.slider-btn.prev {
+  left: 40px;
+}
+
+.slider-btn.next {
+  right: 40px;
+}
+
+/* MENSAJE VACÍO */
+.no-donaciones {
+  text-align: center;
+  color: var(--color-no-donaciones);
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: var(--font-md);
+  opacity: 0.85;
+}
+
+/* CONTENIDO DE LA CARD */
+.donacion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(64, 145, 108, 0.15);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.donacion-header h3 {
+  color: var(--color-slider-h3);
+  font-size: var(--font-md);
+  font-weight: 600;
+}
+
+.estado {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: var(--font-sm);
+  text-transform: capitalize;
+  background-color: var(--color-estado-pendiente);
+  color: var(--color-letra-estado-pendiente);
+  font-weight: 600;
+}
+
+/* Estados */
+.estado.pendiente {
+  background: var(--color-estado-pendiente);
+}
+
+.estado.aprobado {
+  background: var(--color-estado-aprobado);
+}
+
+.estado.rechazado {
+  background: var(--color-estado-rechazado);
+}
+
+.donacion-body h4 {
+  color: var(--color-slider-h4);
+  margin: 0.5rem 0 0.3rem;
+  font-size: var(--font-md);
+}
+
+.donacion-body p {
+  color: var(--color-slider-p);
+  font-size: var(--font-sm);
+}
+
+.donacion-footer {
+  margin-top: 0.8rem;
+  font-size: var(--font-sm);
+  color: var(--color-slider-p);
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  padding-top: 0.5rem;
+  text-align: right;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .donaciones-slider {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .donacion-card {
+    position: static;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 1;
+    width: 320px;
+  }
+
+  .slider-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .donacion-card {
+    width: 90%;
+    padding: 1.2rem;
+  }
+
+  .donacion-header h3 {
+    font-size: var(--font-md);
+  }
+
+  .donacion-body h4 {
+    font-size: var(--font-sm);
+  }
+
+  .donacion-body p,
+  .donacion-footer {
+    font-size: var(--font-xs);
+  }
+}

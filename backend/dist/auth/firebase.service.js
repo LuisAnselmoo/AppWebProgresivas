@@ -13,16 +13,38 @@ exports.FirebaseService = void 0;
 const common_1 = require("@nestjs/common");
 const admin = require("firebase-admin");
 const axios_1 = require("axios");
+const path_1 = require("path");
+const fs_1 = require("fs");
 let FirebaseService = class FirebaseService {
     defaultApp;
     constructor() {
-        this.defaultApp = admin.initializeApp({
-            credential: admin.credential.cert({
-                projectId: process.env.FIREBASE_PROJECT_ID,
-                clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-                privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-            }),
-        });
+        if (!admin.apps.length) {
+            const firebaseConfig = process.env.FIREBASE_CONFIG;
+            if (firebaseConfig) {
+                const serviceAccount = JSON.parse(firebaseConfig);
+                if (serviceAccount.private_key) {
+                    serviceAccount.private_key = serviceAccount.private_key
+                        .replace(/\\\\n/g, '\n')
+                        .replace(/\\n/g, '\n')
+                        .trim();
+                }
+                this.defaultApp = admin.initializeApp({
+                    credential: admin.credential.cert(serviceAccount),
+                });
+                console.log("Firebase inicializado desde variable de entorno (clave normalizada)");
+            }
+            else {
+                const serviceAccountPath = (0, path_1.join)(process.cwd(), 'firebase', 'ecomarket-bd425-firebase-adminsdk-fbsvc-e03bd27836.json');
+                const serviceAccount = JSON.parse((0, fs_1.readFileSync)(serviceAccountPath, 'utf8'));
+                this.defaultApp = admin.initializeApp({
+                    credential: admin.credential.cert(serviceAccount),
+                });
+                console.log("Firebase inicializado desde archivo local");
+            }
+        }
+        else {
+            this.defaultApp = admin.app();
+        }
     }
     getFirestore() {
         return this.defaultApp.firestore();
@@ -47,6 +69,42 @@ let FirebaseService = class FirebaseService {
         }
         catch (error) {
             throw new Error("Correo o contraseña incorrectos");
+        }
+    }
+    async sendPasswordResetEmail(email) {
+        const apiKey = process.env.FIREBASE_API_KEY;
+        const url = `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${apiKey}`;
+        try {
+            const res = await axios_1.default.post(url, {
+                requestType: "PASSWORD_RESET",
+                email,
+            });
+            return {
+                status: "success",
+                message: `Correo de recuperación enviado a ${email}`,
+                data: res.data,
+            };
+        }
+        catch (error) {
+            throw new Error(error.response?.data?.error?.message || "Error al enviar el correo de recuperación");
+        }
+    }
+    async confirmPasswordReset(oobCode, newPassword) {
+        const apiKey = process.env.FIREBASE_API_KEY;
+        const url = `https://identitytoolkit.googleapis.com/v1/accounts:resetPassword?key=${apiKey}`;
+        try {
+            const res = await axios_1.default.post(url, {
+                oobCode,
+                newPassword,
+            });
+            return {
+                status: "success",
+                message: "Contraseña actualizada correctamente",
+                data: res.data,
+            };
+        }
+        catch (error) {
+            throw new Error(error.response?.data?.error?.message || "Código de verificación inválido o expirado");
         }
     }
 };

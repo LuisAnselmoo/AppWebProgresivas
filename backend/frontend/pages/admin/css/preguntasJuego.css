@@ -1,0 +1,328 @@
+@import url("./root.css");
+@import url("./header.css");
+
+/* LAYOUT PRINCIPAL */
+.contenedor-preguntas {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 35px;
+  padding: var(--espaciado-lg);
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* FORMULARIO (izquierda) */
+.formulario-seccion {
+  flex: 0 0 38%;
+  background: var(--color-fondo-card);
+  border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+  padding: var(--espaciado-lg);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.formulario-seccion:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.form-header h3 {
+  color: var(--color-titulo-seccion);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--espaciado-md);
+  letter-spacing: 0.5px;
+}
+
+.campo {
+  margin-bottom: var(--espaciado-md);
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-etiqueta-solicitud);
+  display: block;
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--color-input-borde);
+  background-color: var(--color-input-solicitud);
+  font-size: var(--font-sm);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--btn-amarillo);
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 200, 0, 0.4);
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.btn-primario,
+.btn-secundario {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.btn-primario {
+  background: var(--btn-naranja);
+}
+.btn-primario:hover {
+  background: var(--btn-naranja-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background: var(--btn-gris);
+}
+.btn-secundario:hover {
+  background: var(--btn-gris-hover);
+  transform: translateY(-2px);
+}
+
+/* PANEL DE PREGUNTAS (derecha) */
+.tabla-seccion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Filtro de nivel */
+.filtro-nivel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 12px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  animation: fadeSlide 0.4s ease;
+}
+
+.filtro-nivel .label-filtro {
+  font-weight: 600;
+  color: var(--color-texto-card);
+}
+
+#filtroNivel {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-input-borde);
+  background: var(--color-input-solicitud);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#filtroNivel:hover {
+  background: #fff;
+}
+
+#filtroNivel:focus {
+  border-color: var(--btn-amarillo);
+  box-shadow: 0 0 8px rgba(255, 200, 0, 0.3);
+}
+
+/* CONTENEDOR DE NIVELES */
+.niveles-card {
+  background: var(--color-fondo-donadores);
+  border-radius: 18px;
+  box-shadow: var(--sombra-principal);
+  padding: 25px;
+  width: calc(100% - 0px);
+  animation: fadeSlide 0.5s ease;
+  box-sizing: border-box;
+}
+
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nivel-titulo {
+  color: var(--color-slider-h3);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+  border-bottom: 2px solid var(--btn-amarillo);
+  padding-bottom: 5px;
+}
+
+/* Slider de tarjetas */
+.slider-contenido {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 10px;
+  width: 100%;
+  justify-content: flex-start;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 10px;
+}
+
+.slider-contenido::-webkit-scrollbar {
+  height: 8px;
+}
+.slider-contenido::-webkit-scrollbar-thumb {
+  background: var(--btn-amarillo);
+  border-radius: 8px;
+}
+
+/*
+   TARJETAS DE PREGUNTAS */
+.pregunta-card {
+  flex: 0 0 clamp(250px, 80%, 290px);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 18px 16px;
+  transition: all 0.3s ease;
+  border-top: 6px solid var(--btn-amarillo);
+  scroll-snap-align: center;
+  transform: scale(0.96);
+  opacity: 0;
+  animation: fadeInCard 0.6s ease forwards;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(0.96) translateY(0);
+  }
+}
+
+.pregunta-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.pregunta-texto {
+  font-weight: 700;
+  color: var(--color-texto-card);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.opciones-lista {
+  margin: 10px 0;
+}
+
+.opcion-item {
+  font-size: var(--font-sm);
+  color: var(--color-texto-card);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.opcion-correcta {
+  background: #fff8e1;
+  border-left: 5px solid var(--btn-amarillo);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  color: var(--btn-naranja);
+  margin-top: 10px;
+}
+
+/* --- Botones editar/eliminar --- */
+.acciones-card {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.acciones-card button {
+  border: none;
+  background: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.acciones-card .btn-editar {
+  color: var(--btn-verde);
+}
+.acciones-card .btn-eliminar {
+  color: var(--btn-rojo);
+}
+
+.acciones-card .btn-editar:hover {
+  transform: scale(1.1);
+  color: var(--btn-verde-hover);
+}
+.acciones-card .btn-eliminar:hover {
+  transform: scale(1.1);
+  color: var(--btn-rojo-hover);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .contenedor-preguntas {
+    flex-direction: column;
+    align-items: center;
+  }
+  .formulario-seccion {
+    width: 90%;
+    max-width: 500px;
+    margin-bottom: 25px;
+  }
+  .tabla-seccion {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pregunta-card {
+    flex: 0 0 90%;
+  }
+  .filtro-nivel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

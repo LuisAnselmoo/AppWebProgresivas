@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+firebase-debug.log
+*.log
+*.md
+.env
+.env.*
+**/*.test.ts
+**/*.spec.ts
+**/__tests__/**

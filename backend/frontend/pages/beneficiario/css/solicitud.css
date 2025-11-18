@@ -1,0 +1,410 @@
+@import url('./root.css');
+@import url('./header.css');
+
+/* ESTILOS GENERALES DE LAYOUT */
+.contenedorPrincipal {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Posiciones principales */
+.contenedorDatosPersonales {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.contenedorDirreccion {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.contenedorSolicitudAlimentos {
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.contenedorSolicitud {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.seleccionAlimentos {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.informacionSolicitud {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.contenedorAcciones {
+    grid-area: 2 / 1 / 3 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    color: black;
+}
+
+/* ESTILOS DE LA SECCIÓN SOLICITUD */
+.solicitud {
+    padding: 40px 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.solicitud h2 {
+    font-size: var(--font-xl);
+    color: var(--color-titulo-solicitud, #017a7a);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* TARJETAS Y BLOQUES DE FORMULARIO */
+.contenedorDatosPersonales,
+.contenedorDirreccion,
+.contenedorSolicitudAlimentos {
+    background-color: var(--color-card-solicitud, #ffffff);
+    border-radius: var(--radio-solicitud, 12px);
+    box-shadow: var(--sombra-solicitud, 0 4px 12px rgba(0, 0, 0, 0.08));
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* efecto hover de bloque */
+.contenedorDatosPersonales:hover,
+.contenedorDirreccion:hover,
+.contenedorSolicitudAlimentos:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* TÍTULOS DE SECCIÓN */
+.contenedorDatosPersonales h3,
+.contenedorDirreccion h3,
+.contenedorSolicitudAlimentos h3 {
+    color: var(--color-titulo-solicitud, #017a7a);
+    font-size: 1.2rem;
+    border-left: 5px solid var(--color-titulo-solicitud, #017a7a);
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* FORMULARIOS Y CAMPOS */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    flex-basis: 160px;
+    text-align: right;
+    font-weight: 600;
+    color: var(--color-etiqueta-solicitud, #333333);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid var(--color-input-borde, #e5e7eb);
+    border-radius: 8px;
+    background-color: var(--color-input-solicitud, #f9fafb);
+    font-size: 0.95rem;
+    color: var(--color-texto-solicitud, #1f2937);
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-input-focus, #22c55e);
+    background-color: #fff;
+}
+
+textarea {
+    width: 100%;
+    height: 90px;
+    resize: vertical;
+}
+
+/* CHECKBOXES DE ALIMENTOS */
+.seleccionAlimentos label {
+    font-size: 0.95rem;
+    color: var(--color-texto-solicitud, #1f2937);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.seleccionAlimentos input[type="checkbox"] {
+    accent-color: var(--color-titulo-solicitud, #017a7a);
+}
+
+/* COMENTARIOS Y BOTONES */
+.comentariosAdicionales {
+    grid-column: span 2;
+    text-align: start;
+    padding: 10px;
+    height: auto;
+}
+
+.contenedorBotones {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 15px;
+}
+
+/* BOTONES */
+.btn-primary {
+    background-color: var(--color-titulo-solicitud, #017a7a);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    background-color: #025a5f;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: var(--color-texto, #1f2937);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+    transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .contenedorPrincipal {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedorSolicitud {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label {
+        text-align: left;
+        flex-basis: 100%;
+    }
+
+    .contenedorBotones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+}
+
+/* DETALLES ADICIONALES */
+::placeholder {
+    color: var(--color-placeholder-solicitud, #888888);
+}
+
+#comentarios {
+    border-radius: 10px;
+    padding: 8px;
+}
+
+/* Tablets medianas */
+@media (max-width: 992px) {
+    .contenedorPrincipal {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .contenedorSolicitud {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label {
+        text-align: left;
+        flex-basis: 100%;
+    }
+
+    .contenedorBotones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .solicitud {
+        padding: 30px 20px;
+    }
+
+    /* Checkboxes más legibles y espaciados */
+    .seleccionAlimentos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    .seleccionAlimentos label {
+        flex: 1 1 45%;
+        font-size: 0.95rem;
+        padding: 6px 8px;
+        background: #f9fafb;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+
+    .seleccionAlimentos label:hover {
+        background: #f0f0f0;
+    }
+
+    .seleccionAlimentos input[type="checkbox"] {
+        transform: scale(1.1);
+    }
+}
+
+/* Celulares grandes y medianos*/
+@media (max-width: 768px) {
+    .contenedorPrincipal {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contenedorSolicitud {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .solicitud h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .contenedorDatosPersonales,
+    .contenedorDirreccion,
+    .contenedorSolicitudAlimentos {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    /* Checkboxes en columna completa */
+    .seleccionAlimentos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .seleccionAlimentos label {
+        flex: 1;
+        font-size: 1rem;
+        background: #ffffff;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--color-input-borde, #e5e7eb);
+    }
+
+    .seleccionAlimentos input[type="checkbox"] {
+        transform: scale(1.2);
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+    .solicitud {
+        padding: 20px 15px;
+    }
+
+    .contenedorBotones {
+        gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Checkboxes más táctiles */
+    .seleccionAlimentos label {
+        font-size: 0.95rem;
+        padding: 10px;
+        text-align: end;
+    }
+
+    .seleccionAlimentos input[type="checkbox"] {
+        transform: scale(1.3);
+    }
+}

@@ -1,0 +1,297 @@
+.custom-swal-popup {
+  border-radius: 20px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  padding: 2rem !important;
+  overflow-y: auto !important;
+  max-height: 85vh;
+  position: relative;
+
+  /* Arreglo para móviles */
+  -webkit-overflow-scrolling: touch;
+  touch-action: auto;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+/* FORMULARIO GENERAL */
+#registroFormBeneficiario,
+#registroFormDonador {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 10; /* antes 2, ahora más alto para asegurar toques */
+}
+
+/* subtítulos */
+#registroFormBeneficiario h3,
+#registroFormDonador h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--verde-oscuro);
+  position: relative;
+  width: 100%;
+}
+
+#registroFormBeneficiario h3::after,
+#registroFormDonador h3::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 3px;
+  border-radius: 5px;
+  margin-top: 4px;
+}
+
+/* GRID DE CAMPOS*/
+#registroFormBeneficiario .form-group,
+#registroFormDonador .form-group,
+#registroFormBeneficiario > input,
+#registroFormDonador > input,
+#registroFormBeneficiario > select,
+#registroFormDonador > select {
+  width: 100%;
+}
+
+#registroFormBeneficiario,
+#registroFormDonador {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  align-items: start;
+}
+
+.form-section label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* inputs */
+#registroFormBeneficiario input,
+#registroFormBeneficiario select,
+#registroFormDonador input,
+#registroFormDonador select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-family: var(--fuente);
+  transition: all 0.3s ease;
+}
+
+/* focus */
+#registroFormBeneficiario input:focus,
+#registroFormBeneficiario select:focus,
+#registroFormDonador input:focus,
+#registroFormDonador select:focus {
+  outline: none;
+  background: #fff;
+}
+
+/* separadores */
+.form_hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 1rem 0;
+}
+
+/* links */
+.link_p {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+.link_p a {
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* --- BENEFICIARIO --- */
+#registroFormBeneficiario h3::after {
+  background: var(--verde-acento);
+}
+#registroFormBeneficiario input:focus,
+#registroFormBeneficiario select:focus {
+  border-color: var(--verde-acento);
+  box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.25);
+}
+#registroFormBeneficiario .link_p a {
+  color: var(--verde-medio);
+}
+#registroFormBeneficiario .link_p a:hover {
+  color: var(--verde-acento);
+}
+.custom-swal-popup.beneficiario::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--verde-acento) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -80px;
+  right: -100px;
+  opacity: 0.15;
+  animation: floatBubble 10s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1; /* asegura que no bloquee toques */
+}
+.custom-swal-popup.beneficiario::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--verde-claro) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -80px;
+  left: -80px;
+  opacity: 0.18;
+  animation: floatBubble 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* --- DONADOR --- */
+#registroFormDonador h3::after {
+  background: var(--amarillo);
+}
+#registroFormDonador input:focus,
+#registroFormDonador select:focus {
+  border-color: var(--amarillo);
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, 0.25);
+}
+#registroFormDonador .link_p a {
+  color: var(--amarillo);
+}
+#registroFormDonador .link_p a:hover {
+  color: #ffca33;
+}
+.custom-swal-popup.donador::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--amarillo) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -80px;
+  right: -100px;
+  opacity: 0.15;
+  animation: floatBubble 10s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+}
+.custom-swal-popup.donador::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #ffe8a3 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -80px;
+  left: -80px;
+  opacity: 0.18;
+  animation: floatBubble 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Evitar que las burbujas bloqueen toques */
+.custom-swal-popup::before,
+.custom-swal-popup::after {
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Asegurar que el overlay de SweetAlert no bloquee */
+.swal2-container,
+.swal2-container * {
+  pointer-events: auto !important;
+  touch-action: auto !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .custom-swal-popup {
+    max-width: 95%;
+    padding: 1.5rem !important;
+  }
+
+  .form-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .custom-swal-title {
+    text-align: center;
+  }
+
+  #registroFormBeneficiario,
+  #registroFormDonador {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .custom-swal-popup {
+    padding: 1.2rem !important;
+    border-radius: 14px !important;
+
+    /* arreglos para móvil */
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+  }
+
+  .form-section {
+    gap: 0.8rem;
+  }
+
+  .form-section label {
+    font-size: 0.85rem;
+  }
+
+  #registroFormBeneficiario input,
+  #registroFormBeneficiario select,
+  #registroFormDonador input,
+  #registroFormDonador select {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .link_p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Ajustar tamaño de burbujas en móvil */
+  .custom-swal-popup::before {
+    width: 120px;
+    height: 120px;
+    top: -50px;
+    right: -70px;
+  }
+
+  .custom-swal-popup::after {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+    left: -60px;
+  }
+}
+
+/* ANIMACIÓN */
+@keyframes floatBubble {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(-3deg); }
+}

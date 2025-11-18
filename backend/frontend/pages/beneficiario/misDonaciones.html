@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/misDonaciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon">
+    <title>EcoMarket</title>
+</head>
+
+<body>
+    <!-- encabezado -->
+    <header class="header">
+        <div class="logo">
+            <a href="#Inicio">
+                <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+            </a>
+            <h1>EcoMarket</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navegacion" id="navMenu">
+            <ul>
+                <li><a href="HomeBeneficiario.html">Inicio</a></li>
+                <li><a href="verDonadores.html" class="active">Donadores</a></li>
+                <li><a href="Solicitud.html">Solicitud</a></li>
+                <li><a href="misDonaciones.html" class="active">Mis Donaciones</a></li>
+            </ul>
+
+            <div class="perfil-menu" id="perfilMenu">
+                <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="notif" class="notif">0</span>
+                </button>
+
+                <ul class="dropdown" id="perfilDropdown">
+                    <li><a href="miCuenta.html">Mi Perfil</a></li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="verMensajes">
+                            <i class="fa-regular fa-comments"></i> Mensajes
+                            <span id="badgeMensajes" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="btnNotificaciones">
+                            <i class="fa-regular fa-bell"></i> Notificaciones
+                            <span id="badgeNotificaciones" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="titulo-seccion">Mis Donaciones Asignadas</h2>
+        <div id="donacionesContainer" class="donaciones-lista"></div>
+
+        <section class="extra-section">
+  <i class="fa-solid fa-hand-holding-heart icon"></i>
+  <h3>Gracias por ser parte de EcoMarket</h3>
+  <p>Recuerda revisar tus donaciones con frecuencia y confirmar las que recibas.  
+     Cada acción ayuda a reducir el desperdicio y apoyar a más personas.</p>
+</section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/misDonaciones.js"></script>
+</body>
+
+</html>

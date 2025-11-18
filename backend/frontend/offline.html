@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/logo-EcoMarket-white.svg" type="image/x-icon">
+    <title>EcoMarket - Sin Conexión</title>
+    <style>
+        :root {
+            --color-primary: #4CAF50;
+            --color-secondary: #8BC34A;
+            --color-text: #384238;
+            --color-background: #E8F5E9;
+            --color-accent: #FF9800;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 120px;
+            margin-bottom: 25px;
+            border: 3px solid var(--color-secondary);
+            border-radius: 50%;
+            padding: 8px;
+            background-color: #fff;
+        }
+
+        h1 {
+            color: var(--color-primary);
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .offline-icon {
+            font-size: 3em;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .btn-retry {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--color-primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-retry:hover {
+            background-color: #388E3C;
+        }
+
+        .tip {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: var(--color-text);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="offline-icon"></div> -->
+        <img src="./img/logo-EcoMarket.png" alt="EcoMarket Logo">
+
+        <h1>¡Ups! Estás Sin Conexión</h1>
+
+        <p>Parece que no tienes acceso a Internet en este momento. Por favor, revisa tu conexión Wi-Fi o datos móviles.
+        </p>
+
+        <a href="#" onclick="window.location.reload();" class="btn-retry">Intentar Recargar</a>
+
+        <p class="tip">Recarga la página una vez que te hayas conectado.</p>
+    </div>
+</body>
+
+</html>

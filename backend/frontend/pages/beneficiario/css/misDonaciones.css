@@ -1,0 +1,289 @@
+@import url('./root.css');
+@import url('./header.css');
+
+/* ESTRUCTURA PRINCIPAL */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* BLOQUES DE DONACIONES (secciones) */
+.bloque-donaciones {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.bloque-donaciones:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* TÍTULOS Y SEPARADORES */
+.subtitulo {
+  text-align: center;
+  color: #1565c0;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.subtitulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #009688, #43a047);
+  margin: 0.5rem auto 0;
+  border-radius: 4px;
+}
+
+.separador {
+  border: none;
+  border-top: 2px dashed #009688;
+  margin: 3rem auto;
+  width: 70%;
+}
+
+/* LISTA DE DONACIONES (grid) */
+.donaciones-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 1rem 0;
+}
+
+/* TARJETAS DE DONACIÓN / SOLICITUD */
+.donacion-card {
+  background-color: var(--color-card);
+  border-radius: var(--radio-card);
+  box-shadow: var(--color-sombra);
+  padding: 1.4rem 1.6rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 380px;
+}
+
+.donacion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Línea decorativa */
+.donacion-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--color-acento);
+  border-radius: var(--radio-card) 0 0 var(--radio-card);
+}
+
+/* Cabecera dentro de la tarjeta */
+.donacion-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.icon-header {
+  color: #009688;
+  font-size: 1.4rem;
+}
+
+.donacion-card h3 {
+  color: var(--color-acento);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Información principal */
+.donacion-card p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+}
+
+.donacion-card strong {
+  color: #111;
+}
+
+/* ESTADOS VISUALES */
+.estado-pendiente {
+  color: #ff9800;
+  font-weight: 600;
+}
+.estado-recibida {
+  color: var(--btn-verde);
+  font-weight: 600;
+}
+.estado-no-recibida {
+  color: var(--btn-rojo);
+  font-weight: 600;
+}
+
+/* DETALLE DE PRODUCTOS / ALIMENTOS */
+.productos-box {
+  background: #f0f8f5;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0;
+}
+
+.productos-box h4 {
+  font-size: 1.05rem;
+  color: #1565c0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.lista-productos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-productos li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #333;
+  font-size: 0.95rem;
+  margin: 0.35rem 0;
+}
+
+.icono-prod {
+  color: #43a047;
+  font-size: 0.9rem;
+}
+
+.prod-nombre {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.prod-cant {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.prod-cat {
+  color: #888;
+  font-style: italic;
+}
+
+/* BOTONES DE ACCIÓN */
+.acciones {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btn-aceptar,
+.btn-rechazar {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Aceptar */
+.btn-aceptar {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  box-shadow: 0 2px 6px rgba(67, 160, 71, 0.4);
+}
+.btn-aceptar:hover {
+  background: linear-gradient(135deg, #4caf50, #388e3c);
+  transform: scale(1.05);
+}
+
+/* Rechazar */
+.btn-rechazar {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  box-shadow: 0 2px 6px rgba(229, 57, 53, 0.4);
+}
+.btn-rechazar:hover {
+  background: linear-gradient(135deg, #ef5350, #d32f2f);
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+
+  .bloque-donaciones {
+    padding: 1.5rem 1rem;
+  }
+
+  .donacion-card {
+    max-width: 100%;
+  }
+
+  .acciones {
+    justify-content: center;
+  }
+}
+
+/* SECCIÓN EXTRA (promocional / informativa) */
+.extra-section {
+  background: linear-gradient(135deg, #009688, #1565c0);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  margin: 3rem auto 1rem;
+  max-width: 900px;
+  box-shadow: var(--color-sombra);
+}
+
+.extra-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.extra-section p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.extra-section .icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}

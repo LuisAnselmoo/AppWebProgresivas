@@ -1,0 +1,44 @@
+<form id="registroFormBeneficiario">
+  <h3>Datos Personales</h3>
+  <div class="form-section">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="text" id="apellidoPaterno" placeholder="Apellido Paterno" required>
+    <input type="text" id="apellidoMaterno" placeholder="Apellido Materno">
+    <input type="email" id="correo" placeholder="Correo Electrónico" required>
+    <input type="tel" id="telefono" placeholder="Teléfono" required>
+    <input type="password" id="pass1" placeholder="Contraseña" required>
+    <input type="password" id="pass2" placeholder="Verificar Contraseña" required>
+  </div>
+
+  <hr class="form_hr">
+
+  <h3>Tipo de Beneficiario</h3>
+  <div class="form-section">
+    <select id="tipoBeneficiario">
+      <option value="ciudadano" selected>Ciudadano</option>
+      <option value="organizacion">Organización sin fines de lucro</option>
+      <option value="comedor">Comedor Comunitario</option>
+      <option value="otro">Otro</option>
+    </select>
+    <input type="text" id="nombreBeneficiario" placeholder="Nombre del Beneficiario" required>
+    <input type="text" id="curpRfcBeneficiario" placeholder="CURP o RFC (Opcional)">
+  </div>
+
+  <hr class="form_hr">
+
+  <h3>Dirección</h3>
+  <div class="form-section">
+    <input type="text" id="calle" placeholder="Calle">
+    <input type="text" id="numExterior" placeholder="Número Exterior">
+    <input type="text" id="numInterior" placeholder="Número Interior">
+    <input type="text" id="colonia" placeholder="Colonia o Barrio">
+    <input type="text" id="codigoPostal" placeholder="Código Postal">
+    <input type="text" id="municipio" placeholder="Municipio / Alcaldía">
+    <input type="text" id="estado" placeholder="Estado">
+    <input type="text" id="referencias" placeholder="Referencias (Ej. frente a la iglesia)">
+  </div>
+
+  <hr class="form_hr">
+
+  <p class="link_p">¿Ya tienes cuenta? <a href="#" id="linkLogin">Inicia sesión aquí</a></p>
+</form>

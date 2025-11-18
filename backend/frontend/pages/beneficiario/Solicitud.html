@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/solicitud.css">
+    <title>EcoMarket - Beneficiario</title>
+</head>
+
+<body>
+    <!-- encabezado -->
+    <header class="header">
+        <div class="logo">
+            <a href="#Inicio">
+                <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+            </a>
+            <h1>EcoMarket</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navegacion" id="navMenu">
+            <ul>
+                <li><a href="HomeBeneficiario.html">Inicio</a></li>
+                <li><a href="verDonadores.html" class="active">Donadores</a></li>
+                <li><a href="Solicitud.html">Solicitud</a></li>
+                <li><a href="misDonaciones.html" class="active">Mis Donaciones</a></li>
+            </ul>
+
+            <div class="perfil-menu" id="perfilMenu">
+                <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="notif" class="notif">0</span>
+                </button>
+
+                <ul class="dropdown" id="perfilDropdown">
+                    <li><a href="miCuenta.html">Mi Perfil</a></li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="verMensajes">
+                            <i class="fa-regular fa-comments"></i> Mensajes
+                            <span id="badgeMensajes" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="btnNotificaciones">
+                            <i class="fa-regular fa-bell"></i> Notificaciones
+                            <span id="badgeNotificaciones" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="solicitud">
+        <h2>Registro de Beneficiario</h2>
+        <section class="contenedorPrincipal">
+            <div class="contenedorDatosPersonales">
+                <h3>Datos Personales</h3>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidoPaterno">Apellido Paterno</label>
+                    <input type="text" id="apellidoPaterno" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidoMaterno">Apellido Materno</label>
+                    <input type="text" id="apellidoMaterno" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono">
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoBeneficiario">Tipo de Beneficiario</label>
+                    <input type="text" id="tipoBeneficiario" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombreBeneficiario">Nombre del Beneficiario</label>
+                    <input type="text" id="nombreBeneficiario" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="curpRfcBeneficiario">CURP o RFC</label>
+                    <input type="text" id="curpRfcBeneficiario" disabled>
+                </div>
+            </div>
+
+            <div class="contenedorDirreccion">
+                <h3>Dirección del Beneficiario</h3>
+                <div class="form-group">
+                    <label for="calle">Calle</label>
+                    <input type="text" id="calle" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="numExterior">Número exterior</label>
+                    <input type="text" id="numExterior" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="numInterior">Número interior</label>
+                    <input type="text" id="numInterior" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="colonia">Colonia</label>
+                    <input type="text" id="colonia" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="codigoPostal">Código Postal</label>
+                    <input type="text" id="codigoPostal" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="municipio">Municipio / Alcaldía</label>
+                    <input type="text" id="municipio" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="referencias">Referencias</label>
+                    <input type="text" id="referencias" placeholder="Opcional">
+                </div>
+            </div>
+
+            <div class="contenedorSolicitudAlimentos">
+                <h3>Solicitud de Alimentos</h3>
+                <div class="contenedorSolicitud">
+                    <div class="seleccionAlimentos">
+                        <label>Selecciona los alimentos requeridos</label>
+                        <label><input type="checkbox" value="Frutas y Verduras"> Frutas y Verduras</label>
+                        <label><input type="checkbox" value="Lácteos"> Lácteos</label>
+                        <label><input type="checkbox" value="Pan y Cereales"> Pan y Cereales</label>
+                        <label><input type="checkbox" value="Enlatados"> Enlatados</label>
+                        <label><input type="checkbox" value="Proteínas"> Proteínas</label>
+                        <label><input type="checkbox" value="Bebidas"> Bebidas</label>
+                        <label><input type="checkbox" id="otroCheck" value="Otro"> Otro</label>
+                        <input type="text" id="otroAlimento" placeholder="Especifica otro alimento"
+                            style="display:none;">
+                    </div>
+
+                    <div class="informacionSolicitud">
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad requerida <span style="color:red">*</span></label>
+                            <input type="text" id="cantidad" placeholder="Ej. 10 kg" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="frecuencia">Frecuencia <span style="color:red">*</span></label>
+                            <select id="frecuencia" required>
+                                <option value="">Selecciona una opción</option>
+                                <option>Única vez</option>
+                                <option disabled>Semanal</option>
+                                <option disabled>Mensual</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgencia">Urgencia <span style="color:red">*</span></label>
+                            <select id="urgencia" required>
+                                <option value="">Selecciona una opción</option>
+                                <option>Baja</option>
+                                <option>Media</option>
+                                <option>Alta</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="modalidad">Modalidad <span style="color:red">*</span></label>
+                            <select id="modalidad" required>
+                                <option value="">Selecciona una opción</option>
+                                <option>Recolección</option>
+                                <option>Entrega a domicilio</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="diaPreferido">Día preferido</label><input type="date" id="diaPreferido">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="horaPreferida">Hora preferida</label><input type="time" id="horaPreferida">
+                        </div>
+                        <div class="form-group">
+                            <label for="donadorAsignado">Asignar Donador (opcional)</label>
+                            <select id="donadorAsignado">
+                                <option value="">-- Ninguno --</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="contenedorAcciones">
+                        <div class="comentariosAdicionales">
+                            <label for="comentarios">Comentarios adicionales</label><br>
+                            <textarea id="comentarios"
+                                placeholder="Detalles que ayuden a la entrega o disponibilidad"></textarea>
+                        </div>
+                        <div class="contenedorBotones">
+                            <button type="button" id="btnEnviar" class="btn-primary">Enviar Solicitud</button>
+                            <button type="reset" class="btn-secondary">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/solicitudAlimento.js"></script>
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="./js/chat.js"></script>
+    <script type="module" src="./js/app.js"></script>
+
+</body>
+
+</html>

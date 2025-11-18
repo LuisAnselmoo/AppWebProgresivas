@@ -1,0 +1,48 @@
+<form id="registroFormDonador">
+  <h3>Datos Personales</h3>
+  <div class="form-section">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="text" id="apellidoPaterno" placeholder="Apellido Paterno" required>
+    <input type="text" id="apellidoMaterno" placeholder="Apellido Materno">
+    <input type="email" id="correo" placeholder="Correo Electrónico" required>
+    <input type="tel" id="telefono" placeholder="Teléfono" required>
+    <input type="password" id="pass1" placeholder="Contraseña" required>
+    <input type="password" id="pass2" placeholder="Verificar Contraseña" required>
+  </div>
+
+  <hr class="form_hr">
+
+  <h3>Datos de la Empresa o Persona</h3>
+  <div class="form-section">
+    <select id="tipoDonador">
+      <option value="empresa" selected>Empresa</option>
+      <option value="persona">Persona</option>
+      <option value="supermercado">Supermercado</option>
+      <option value="restaurante">Restaurante</option>
+      <option value="fundacion">Fundación</option>
+      <option value="otro">Otro</option>
+    </select>
+    <input type="text" id="nombreEmpresa" placeholder="Nombre Comercial o Razón Social" required>
+    <input type="text" id="rfcEmpresa" placeholder="RFC" required>
+    <input type="text" id="nombreRepresentante" placeholder="Representante o Encargado" required>
+    <input type="text" id="cargoRepresentante" placeholder="Cargo o Puesto">
+  </div>
+
+  <hr class="form_hr">
+
+  <h3>Dirección</h3>
+  <div class="form-section">
+    <input type="text" id="calle" placeholder="Calle" required>
+    <input type="text" id="numExterior" placeholder="Número Exterior" required>
+    <input type="text" id="numInterior" placeholder="Número Interior (Opcional)">
+    <input type="text" id="colonia" placeholder="Colonia o Barrio" required>
+    <input type="text" id="codigoPostal" placeholder="Código Postal" required>
+    <input type="text" id="municipio" placeholder="Municipio / Alcaldía" required>
+    <input type="text" id="estado" placeholder="Estado" required>
+    <input type="text" id="referencias" placeholder="Referencias (Ej. frente al parque)">
+  </div>
+
+  <hr class="form_hr">
+
+  <p class="link_p">¿Ya tienes cuenta? <a href="#" id="linkLogin">Inicia sesión aquí</a></p>
+</form>

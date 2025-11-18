@@ -1,0 +1,115 @@
+@import url('./root.css');
+@import url('./header.css');
+
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.titulo-seccion {
+  font-size: 2rem;
+  color: var(--color-titulo-seccion);
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+main p {
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+}
+
+/* GRÁFICAS */
+.graficas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  width: 100%;
+  justify-items: center;
+}
+
+.grafica-card {
+  background: linear-gradient(145deg, #ffffff, #f9f9f9);
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.grafica-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.grafica-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(128, 237, 153, 0.08), rgba(255, 183, 3, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.grafica-card:hover::after {
+  opacity: 1;
+}
+
+.grafica-card h3 {
+  font-size: 1.25rem;
+  color: var(--color-titulo-seccion);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.grafica-card i {
+  color: var(--btn-naranja);
+  margin-right: 6px;
+}
+
+.grafica-card canvas {
+  width: 100%;
+  max-width: 280px;
+  height: 220px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ANIMACIONES */
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.grafica-card {
+  animation: fadeUp 0.6s ease both;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .graficas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grafica-card {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,217 @@
+.custom-swal-popup {
+  background: linear-gradient(135deg, #ffffff, #f7fdf9);
+  border-radius: 20px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  padding: 2rem !important;
+  overflow: hidden;
+  position: relative;
+}
+
+/* burbuja decorativa de fondo */
+.custom-swal-popup::before,
+.custom-swal-popup::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: floatBubble 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+.custom-swal-popup::before {
+  width: 200px;
+  height: 200px;
+  background: var(--verde-acento);
+  top: -60px;
+  right: -80px;
+}
+.custom-swal-popup::after {
+  width: 150px;
+  height: 150px;
+  background: var(--verde-claro);
+  bottom: -60px;
+  left: -70px;
+}
+
+/* título */
+.custom-swal-title {
+  color: var(--verde-oscuro) !important;
+  font-family: var(--fuente);
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* contenido HTML */
+.custom-swal-html {
+  z-index: 2;
+}
+
+/* ======== FORMULARIO DE LOGIN ======== */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+#loginForm input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: var(--fuente);
+}
+
+#loginForm input:focus {
+  outline: none;
+  border-color: var(--verde-acento);
+  box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.2);
+  background: #fff;
+}
+
+/* ======== LINKS DE REGISTRO Y RECUPERACIÓN ======== */
+.link_p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+.link_p a {
+  color: var(--verde-medio);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.link_p a:hover {
+  color: var(--verde-acento);
+  text-decoration: underline;
+}
+
+/* ======== BOTONES ======== */
+.custom-swal-confirm,
+.custom-swal-cancel {
+  border-radius: 12px !important;
+  font-family: var(--fuente);
+  font-weight: 600 !important;
+  padding: 0.8rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.custom-swal-confirm {
+  background: var(--verde-acento) !important;
+  color: var(--blanco) !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(82, 183, 136, 0.4);
+}
+
+.custom-swal-confirm:hover {
+  background: var(--verde-claro) !important;
+  color: var(--verde-oscuro) !important;
+}
+
+.custom-swal-cancel {
+  background: #f3f3f3 !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+}
+
+.custom-swal-cancel:hover {
+  background: #e9e9e9 !important;
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes floatBubble {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(-3deg); }
+}
+
+
+/* ======== LOGIN RESPONSIVO ======== */
+@media (max-width: 768px) {
+  .custom-swal-popup {
+    width: 90% !important;
+    padding: 1.5rem !important;
+    border-radius: 14px !important;
+  }
+
+  .custom-swal-title {
+    font-size: 1.4rem !important;
+    text-align: center;
+  }
+
+  #loginForm {
+    gap: 0.8rem;
+  }
+
+  #loginForm input {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .link_p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .swal2-actions {
+    flex-direction: column-reverse !important;
+    width: 100%;
+    gap: 0.6rem !important;
+  }
+
+  .custom-swal-confirm,
+  .custom-swal-cancel {
+    width: 100% !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-swal-popup {
+    width: 95% !important;
+    padding: 1.2rem !important;
+    border-radius: 12px !important;
+  }
+
+  .custom-swal-title {
+    font-size: 1.2rem !important;
+  }
+
+  #loginForm input {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .custom-swal-confirm,
+  .custom-swal-cancel {
+    padding: 0.7rem 1rem !important;
+  }
+
+  .link_p {
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  /* Burbujas más pequeñas */
+  .custom-swal-popup::before {
+    width: 120px;
+    height: 120px;
+    top: -40px;
+    right: -60px;
+  }
+
+  .custom-swal-popup::after {
+    width: 100px;
+    height: 100px;
+    bottom: -40px;
+    left: -50px;
+  }
+}

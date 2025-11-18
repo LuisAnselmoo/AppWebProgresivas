@@ -1,0 +1,162 @@
+@import url('./root.css');
+@import url('./header.css');
+
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.titulo-seccion {
+  font-size: var(--font-xxl);
+  color: var(--color-titulo-seccion);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 25px;
+  color: #5e5e5e;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/*nCONTENEDOR GENERAL */
+.asignaciones-seccion {
+  background: var(--color-card-solicitud);
+  border-radius: var(--borde-card);
+  box-shadow: var(--card-sombra);
+  padding: 25px 30px;
+  backdrop-filter: blur(6px);
+  position: relative;
+}
+
+/* TARJETAS (cards) */
+.asignacion-card {
+  background: #fffdf9;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid var(--btn-amarillo);
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.asignacion-card[data-tipo="donador"] {
+  border-left-color: var(--btn-naranja);
+}
+
+.asignacion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-sombra);
+}
+
+.asignacion-card h4 {
+  color: var(--color-titulo-solicitud);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.asignacion-card p {
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* Botón asignar */
+.btn-asignar {
+  background-color: var(--btn-naranja);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transicion-principal);
+}
+
+.btn-asignar:hover {
+  background-color: var(--btn-naranja-hover);
+  transform: translateY(-1px);
+}
+
+/*
+   RESPONSIVE */
+@media (max-width: 768px) {
+  main {
+    padding: 20px 10px;
+  }
+
+  .asignacion-card {
+    padding: 15px;
+  }
+
+  .btn-asignar {
+    width: 100%;
+  }
+}
+.subtitulo-productos {
+  color: var(--btn-naranja);
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.producto-item {
+  background: #fffdf8;
+  border: 1px solid #f2d7b5;
+  border-radius: 10px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  flex: 0 0 calc(50% - 8px);
+}
+
+.producto-item:hover {
+  transform: translateY(-3px);
+}
+
+.producto-item h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--btn-naranja);
+  margin: 0 0 4px;
+}
+
+.producto-item p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
+.badge {
+  background-color: var(--btn-naranja);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  margin-right: 6px;
+}
+
+.sin-productos {
+  font-style: italic;
+  color: #777;
+  margin: 6px 0 10px;
+}

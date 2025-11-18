@@ -51,28 +51,119 @@ let AuthController = class AuthController {
         }
     }
     async register(body) {
-        const { nombre, apellidoPaterno, apellidoMaterno, correo, telefono, pass1, tipoUsuario } = body;
+        const { correo, pass1, tipoUsuario } = body;
         try {
+            try {
+                const existingUser = await this.firebaseService.getAuth().getUserByEmail(correo);
+                if (existingUser) {
+                    return { status: "error", message: "El correo ya está registrado" };
+                }
+            }
+            catch { }
             const user = await this.firebaseService.getAuth().createUser({
                 email: correo,
                 password: pass1,
-                displayName: nombre,
+                displayName: body.nombre,
             });
-            await this.firebaseService.getFirestore().collection("usuarios").doc(user.uid).set({
-                nombre,
-                apellidoPaterno,
-                apellidoMaterno,
-                correo,
-                telefono,
+            const usuarioData = {
+                nombre: body.nombre,
+                apellidoPaterno: body.apellidoPaterno,
+                apellidoMaterno: body.apellidoMaterno,
+                correo: body.correo,
+                telefono: body.telefono,
+                tipoUsuario,
                 rol: tipoUsuario,
                 fechaCreacion: new Date(),
-            });
+                tipoBeneficiario: body.tipoBeneficiario || null,
+                nombreBeneficiario: body.nombreBeneficiario || null,
+                curpRfcBeneficiario: body.curpRfcBeneficiario || null,
+                tipoDonador: body.tipoDonador || null,
+                nombreEmpresa: body.nombreEmpresa || null,
+                rfcEmpresa: body.rfcEmpresa || null,
+                nombreRepresentante: body.nombreRepresentante || null,
+                cargoRepresentante: body.cargoRepresentante || null,
+                contactoAlterno: body.contactoAlterno || null,
+                correoAlterno: body.correoAlterno || null,
+                calle: body.calle || null,
+                numExterior: body.numExterior || null,
+                numInterior: body.numInterior || null,
+                colonia: body.colonia || null,
+                codigoPostal: body.codigoPostal || null,
+                municipio: body.municipio || null,
+                estado: body.estado || null,
+                referencias: body.referencias || null,
+            };
+            await this.firebaseService.getFirestore().collection("usuarios").doc(user.uid).set(usuarioData);
             return { status: "success", message: "Usuario registrado correctamente", uid: user.uid };
         }
         catch (error) {
+            let message = "Error desconocido en el servidor";
             if (error.code === "auth/email-already-exists")
-                return { status: "error", message: "El correo ya está registrado" };
-            return { status: "error", message: "Error en el servidor: " + error.message };
+                message = "El correo ya está registrado";
+            else if (error.code === "auth/invalid-password")
+                message = "La contraseña no es válida";
+            else if (error.code === "auth/invalid-email")
+                message = "El correo tiene un formato inválido";
+            else if (error.message?.includes("Firestore"))
+                message = "Error al guardar datos en Firestore";
+            return { status: "error", message };
+        }
+    }
+    async recoverPassword(body) {
+        try {
+            const { correo } = body;
+            if (!correo)
+                return { status: "error", message: "El correo es obligatorio" };
+            const result = await this.firebaseService.sendPasswordResetEmail(correo);
+            return result;
+        }
+        catch (error) {
+            return { status: "error", message: error.message };
+        }
+    }
+    async recoverPasswordSMS(body) {
+        try {
+            const { correo } = body;
+            if (!correo)
+                return { status: "error", message: "El correo es obligatorio" };
+            const snapshot = await this.firebaseService
+                .getFirestore()
+                .collection("usuarios")
+                .where("correo", "==", correo)
+                .get();
+            if (snapshot.empty)
+                return { status: "error", message: "Usuario no encontrado" };
+            const userDoc = snapshot.docs[0];
+            const userData = userDoc.data();
+            if (!userData.telefono)
+                return { status: "error", message: "No hay teléfono registrado para este usuario" };
+            const telefono = userData.telefono;
+            const codigo = Math.floor(100000 + Math.random() * 900000).toString();
+            await this.firebaseService.getFirestore()
+                .collection("recuperaciones")
+                .doc(userDoc.id)
+                .set({
+                codigo,
+                telefono,
+                creadoEn: new Date(),
+                expiracion: new Date(Date.now() + 10 * 60 * 1000),
+            });
+            return { status: "success", message: "SMS de recuperación enviado." };
+        }
+        catch (error) {
+            return { status: "error", message: error.message };
+        }
+    }
+    async resetPassword(body) {
+        try {
+            const { code, newPassword } = body;
+            if (!code || !newPassword)
+                return { status: "error", message: "Código y nueva contraseña requeridos" };
+            const result = await this.firebaseService.confirmPasswordReset(code, newPassword);
+            return result;
+        }
+        catch (error) {
+            return { status: "error", message: error.message };
         }
     }
 };
@@ -91,6 +182,27 @@ __decorate([
     __metadata("design:paramtypes", [validacionDto_1.RegisterDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "register", null);
+__decorate([
+    (0, common_1.Post)("recover"),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "recoverPassword", null);
+__decorate([
+    (0, common_1.Post)("recover-sms"),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "recoverPasswordSMS", null);
+__decorate([
+    (0, common_1.Post)("reset-password"),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "resetPassword", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)("/auth"),
     __metadata("design:paramtypes", [firebase_service_1.FirebaseService])

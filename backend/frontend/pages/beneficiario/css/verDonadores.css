@@ -1,0 +1,101 @@
+/* VER DONADORES - ECO MARKET */
+@import url('./root.css');
+@import url('./header.css');
+
+/****************** Estilos de Donadores ***********************/
+
+main {
+    padding: var(--espaciado-lg);
+}
+
+.contenedor-donadores {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-principal {
+    color: var(--color-titulo-card);
+    font-size: var(--font-xl);
+    margin-bottom: var(--espaciado-sm);
+}
+
+.subtitulo {
+    color: var(--color-no-solicitudes);
+    font-size: var(--font-md);
+    margin-bottom: var(--espaciado-lg);
+}
+
+.solicitudes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--espaciado-md);
+}
+
+.solicitud-card {
+    background: var(--color-card-donador);
+    border-radius: var(--borde-card-donador);
+    box-shadow: var(--sombra-card-donador);
+    padding: var(--espaciado-md);
+    transition: var(--transicion-principal);
+}
+
+.solicitud-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-sombra);
+}
+
+.solicitud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-borde-chat);
+    padding-bottom: var(--espaciado-xs);
+    margin-bottom: var(--espaciado-sm);
+}
+
+.solicitud-header h3 {
+    font-size: var(--font-lg);
+    color: var(--color-titulo-card);
+    margin: 0;
+}
+
+.estado.donador {
+    background: var(--color-estado-aprobado);
+    color: #fff;
+    font-size: var(--font-xs);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.solicitud-body {
+    text-align: left;
+    color: var(--color-texto-card);
+    font-size: var(--font-sm);
+    line-height: 1.4;
+}
+
+.solicitud-body p {
+    margin: 4px 0;
+}
+
+.solicitud-footer {
+    text-align: center;
+    margin-top: var(--espaciado-sm);
+}
+
+.btn-verde {
+    background: var(--color-boton-chat);
+    color: var(--color-boton-chat-texto);
+    border: none;
+    border-radius: 25px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: var(--transicion-principal);
+    font-size: var(--font-sm);
+}
+
+.btn-verde:hover {
+    background: var(--color-boton-chat-hover);
+    transform: scale(1.05);
+}

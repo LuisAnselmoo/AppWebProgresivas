@@ -1,0 +1,239 @@
+@import url('./root.css');
+@import url('./header.css');
+
+/* =================== CONTENEDOR GENERAL =================== */
+main {
+    padding: var(--espaciado-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-lg);
+    color: var(--color-texto-entrega);
+}
+
+.titulo-seccion {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    color: var(--color-titulo-entrega);
+    text-align: center;
+    margin-bottom: var(--espaciado-md);
+}
+
+.subtitulo {
+    font-size: var(--font-lg);
+    color: var(--color-subtitulo-entrega);
+    font-weight: 500;
+    margin-bottom: var(--espaciado-sm);
+}
+
+/* =================== SECCIONES =================== */
+.bloque-donaciones {
+    background: var(--color-fondo-entregas);
+    border-radius: var(--borde-redondeado);
+    padding: var(--espaciado-lg);
+    box-shadow: var(--sombra-card-entrega);
+    transition: var(--transicion-principal);
+}
+
+.bloque-donaciones:hover {
+    transform: var(--hover-transform);
+    box-shadow: var(--hover-shadow);
+}
+
+/* =================== CARDS =================== */
+.donacion-card {
+    background: var(--color-card-entrega);
+    border-radius: var(--radio-card-entrega);
+    box-shadow: var(--sombra-card-entrega);
+    padding: var(--espaciado-md);
+    margin-bottom: var(--espaciado-md);
+    transition: var(--transicion-principal);
+}
+
+.donacion-card:hover {
+    transform: var(--hover-transform);
+    box-shadow: var(--hover-shadow);
+}
+
+.donacion-header {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-sm);
+    margin-bottom: var(--espaciado-sm);
+}
+
+.donacion-header h3 {
+    color: var(--color-titulo-entrega);
+    font-size: var(--font-lg);
+    font-weight: 600;
+}
+
+.icon-header {
+    color: var(--color-subtitulo-entrega);
+    font-size: 1.6rem;
+}
+
+/* =================== DETALLES =================== */
+.donacion-detalles p {
+    margin: 0.3rem 0;
+    font-size: var(--font-sm);
+    color: var(--color-texto-entrega);
+}
+
+.productos-box {
+    background: var(--color-fondo-card);
+    border-radius: var(--radio-card-entrega);
+    padding: var(--espaciado-md);
+    margin-top: var(--espaciado-sm);
+    box-shadow: var(--sombra-card-entrega);
+}
+
+.productos-box h4 {
+    font-size: var(--font-md);
+    color: var(--color-subtitulo-entrega);
+    margin-bottom: var(--espaciado-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* =================== LISTA PRODUCTOS =================== */
+.lista-productos {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.lista-productos li {
+    font-size: var(--font-sm);
+    color: var(--color-texto-entrega);
+    padding: var(--espaciado-xs) 0;
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-xs);
+    border-bottom: 1px dashed #eee;
+}
+
+.icono-prod {
+    color: var(--color-titulo-entrega);
+}
+
+.prod-cat {
+    font-size: var(--font-xs);
+    color: #777;
+}
+
+/* =================== ESTADOS =================== */
+.estado-recibida {
+    background: var(--estado-entregada-bg);
+    color: var(--estado-entregada-text);
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+}
+
+.estado-no-recibida {
+    background: var(--estado-no-entregada-bg);
+    color: var(--estado-no-entregada-text);
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+}
+
+.estado-pendiente {
+    background: var(--estado-pendiente-bg);
+    color: var(--estado-pendiente-text);
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+}
+
+/* =================== BOTONES =================== */
+.acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--espaciado-sm);
+    margin-top: var(--espaciado-md);
+}
+
+button {
+    border: none;
+    border-radius: var(--borde-redondeado);
+    padding: 0.5rem 1rem;
+    font-size: var(--font-sm);
+    cursor: pointer;
+    transition: var(--transicion-principal);
+    font-weight: 500;
+}
+
+.btn-aceptar {
+    background: var(--btn-verde);
+    color: var(--color-letra-principal);
+}
+
+.btn-aceptar:hover {
+    background: var(--btn-verde-hover);
+    transform: var(--hover-transform);
+}
+
+.btn-rechazar {
+    background: var(--btn-rojo);
+    color: var(--color-letra-principal);
+}
+
+.btn-rechazar:hover {
+    background: var(--btn-rojo-hover);
+    transform: var(--hover-transform);
+}
+/* Estados de botones */
+button[disabled] {
+  background-color: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+button[disabled]:hover {
+  background-color: #ccc !important;
+  transform: none;
+}
+
+/* =================== EXTRA SECTION =================== */
+.extra-section {
+    text-align: center;
+    padding: var(--espaciado-lg);
+    background: var(--color-fondo-card);
+    border-radius: var(--borde-redondeado);
+    box-shadow: var(--sombra-card-entrega);
+    color: var(--color-texto-entrega);
+    /* animation: floatBubble 8s ease-in-out infinite alternate; */
+}
+
+.extra-section .icon {
+    font-size: 3rem;
+    color: var(--color-titulo-entrega);
+    margin-bottom: var(--espaciado-sm);
+}
+
+.extra-section h3 {
+    font-size: var(--font-lg);
+    color: var(--color-subtitulo-entrega);
+    margin-bottom: var(--espaciado-xs);
+}
+
+.extra-section p {
+    font-size: var(--font-sm);
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+    .acciones {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
