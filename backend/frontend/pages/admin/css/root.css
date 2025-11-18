@@ -1,0 +1,241 @@
+/* ECO-MARKET VARIABLES - ADMINISTRADOR (PALETA AMARILLO / NARANJA) */
+
+:root {
+    /* ================== Tamaños generales ================== */
+    --font-xs: 0.8rem;
+    --font-sm: 0.9rem;
+    --font-md: 1rem;
+    --font-lg: 1.3rem;
+    --font-xl: 1.6rem;
+    --font-xxl: 2rem;
+
+    /* ================== Espaciados y bordes ================== */
+    --espaciado-xs: 0.25rem;
+    --espaciado-sm: 0.5rem;
+    --espaciado-md: 1rem;
+    --espaciado-lg: 2rem;
+    --borde-redondeado: 16px;
+
+    /* ================== Transiciones y sombras ================== */
+    --transicion-principal: all 0.3s ease;
+    --sombra-principal: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    /* ================== HEADER ================== */
+    --fuente: "Poppins", "Segoe UI", sans-serif;
+
+    /* Fondo degradado cálido */
+    --color-fondo-gradient: linear-gradient(145deg, #ffb300, #ff9100, #f57c00);
+
+    /* Colores de texto */
+    --color-letra-titulo: #ffffff;
+    --tamaño-letra-titulo: 1.5rem;
+    --color-letra-principal: #ffffff;
+    --color-letra-secundario: #212121;
+
+    /* Enlaces */
+    --color-link-principal: #ffffff;
+    --color-link-secundario: #212121;
+    --color-link-hover: #ffe082;
+    --color-link-active: #ffcc00;
+
+    /* Perfil / dropdown */
+    --color-perfil-borde: #ffffff;
+    --color-perfil-hover: #ffb300;
+    --color-fondo-dropdown: #ffffff;
+    --color-fondo-hover-dropdown: #fff8e1;
+    --color-texto-dropdown: #333333;
+    --border-redondeado-dropdown: 8px;
+    --color-dropdown-hover: #f7f7f7;
+    --color-boxshadow-dropdown: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    /* ================== HOME ADMIN ================== */
+    --color-titulo-seccion: #e65100;
+    --color-fondo-card: #ffffff;
+    --borde-card: 12px;
+    --card-sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --card-hover-sombra: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --card-texto: #333333;
+
+    --color-fondo-botones-slider: #ff9800;
+    --color-texto-slider: #ffffff;
+    --sombra-card-slider: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --transition-slider: all 0.3s ease;
+
+    --color-fondo-boton-slider-hover: #f57c00;
+    --color-no-solicitudes: #555555;
+
+    --color-slider-h3: #e65100;
+    --color-slider-h4: #ffb74d;
+    --color-slider-p: #555555;
+
+    --color-estado-pendiente: #ffb300;
+    --color-letra-estado-pendiente: #ffffff;
+    --color-estado-aprobado: #66bb6a;
+    --color-estado-rechazado: #e53935;
+
+    /* ================== CHAT ================== */
+    --color-fondo-chat: #fffdf7;
+    --color-borde-chat: #e0e0e0;
+    --color-fondo-msg-propio: #ffe082;
+    --color-fondo-msg-otro: #ffffff;
+    --color-texto-chat: #333333;
+    --color-placeholder-chat: #9e9e9e;
+    --color-chat-header: #f57c00;
+    --color-chat-typing: #757575;
+
+    /* ================== VER USUARIOS / DONADORES ================== */
+    --color-fondo-donadores: #fffaf2;
+    --color-card-donador: #ffffff;
+    --borde-card-donador: 10px;
+    --sombra-card-donador: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --color-titulo-card: #ff6f00;
+    --color-texto-card: #333333;
+    --color-boton-chat: #ff9800;
+    --color-boton-chat-hover: #f57c00;
+    --color-boton-chat-texto: #ffffff;
+
+    --color-scrollbar: #ffa000;
+    --color-scrollbar-thumb: #e65100;
+
+    /* ================== FORMULARIOS / GESTIÓN ================== */
+    --color-fondo-solicitud: #fffaf2;
+    --color-card-solicitud: #ffffff;
+    --color-borde-solicitud: #e0e0e0;
+    --color-titulo-solicitud: #f57c00;
+    --color-etiqueta-solicitud: #333333;
+    --color-input-solicitud: #fffde7;
+    --color-input-borde: #e5e7eb;
+    --color-input-focus: #ff9800;
+    --color-placeholder-solicitud: #888888;
+    --color-texto-solicitud: #1f2937;
+
+    --sombra-solicitud: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radio-solicitud: 12px;
+
+    /* ================== MI CUENTA ================== */
+    --color-fondo-perfil: #fffaf2;
+    --color-card-perfil: #ffffff;
+    --color-borde-perfil: #e0e0e0;
+    --color-titulo-perfil: #f57c00;
+    --color-texto-perfil: #1f2937;
+    --color-label-perfil: #333333;
+    --color-input-fondo: #fffde7;
+    --color-input-borde: #e5e7eb;
+    --color-input-focus: #ffa000;
+    --sombra-perfil: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    /* ================== BOTONES ================== */
+    --btn-naranja: #f57c00;
+    --btn-naranja-hover: #ef6c00;
+    --btn-amarillo: #ffb300;
+    --btn-amarillo-hover: #ffa000;
+    --btn-verde: #43a047;
+    --btn-verde-hover: #2e7d32;
+    --btn-gris: #b0bec5;
+    --btn-gris-hover: #90a4ae;
+    --btn-rojo: #e53935;
+    --btn-rojo-hover: #c62828;
+}
+
+/* ================== Animaciones ================== */
+@keyframes floatBubble {
+    0% { transform: translateY(0) rotate(0deg) scale(1); }
+    50% { transform: translateY(-25px) rotate(3deg) scale(1.05); }
+    100% { transform: translateY(0) rotate(-3deg) scale(1); }
+}
+
+@keyframes floatDiagonal {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, -30px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* ================== Fondo decorativo ================== */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente);
+    background-color: var(--color-fondo-perfil);
+    color: var(--color-texto-perfil);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Burbujas cálidas */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.15;
+    z-index: 0;
+    animation: floatBubble 10s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+body::before {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -130px;
+    background: radial-gradient(circle, #ffb300 0%, #f57c00 80%);
+}
+
+body::after {
+    width: 220px;
+    height: 220px;
+    bottom: -90px;
+    left: -110px;
+    background: radial-gradient(circle, #f9a825 0%, #ef6c00 80%);
+    animation-delay: 3s;
+}
+
+/* Burbujas secundarias diagonales */
+html::before,
+html::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatDiagonal 18s ease-in-out infinite alternate;
+}
+
+html::before {
+    width: 180px;
+    height: 180px;
+    top: 25%;
+    left: 12%;
+    background: radial-gradient(circle, #fff59d 0%, #ffb300 80%);
+    animation-delay: 2s;
+}
+
+html::after {
+    width: 240px;
+    height: 240px;
+    bottom: 15%;
+    right: 10%;
+    background: radial-gradient(circle, #f57f17 0%, #f57c00 80%);
+    animation-delay: 5s;
+}
+
+/* Gradiente de fondo con luz cálida */
+body {
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 179, 0, 0.18) 0%, transparent 70%),
+        radial-gradient(circle at 80% 60%, rgba(255, 111, 0, 0.15) 0%, transparent 70%),
+        radial-gradient(circle at 60% 80%, rgba(255, 204, 0, 0.12) 0%, transparent 70%),
+        radial-gradient(circle at 30% 90%, rgba(255, 160, 0, 0.18) 0%, transparent 70%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: lighten;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,290 @@
+/* ECO-MARKET VARIABLES - BENEFICIARIO (NUEVA PALETA) */
+
+:root {
+    /* tamaños generales */
+    --font-xs: 0.8rem;
+    --font-sm: 0.9rem;
+    --font-md: 1rem;
+    --font-lg: 1.3rem;
+    --font-xl: 1.6rem;
+    --font-xxl: 2rem;
+
+    /* espaciados y bordes generales */
+    --espaciado-xs: 0.25rem;
+    --espaciado-sm: 0.5rem;
+    --espaciado-md: 1rem;
+    --espaciado-lg: 2rem;
+    --borde-redondeado: 16px;
+
+    /* transiciones y sombras */
+    --transicion-principal: all 0.3s ease;
+    --sombra-principal: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    /***************** HEADER ******************/
+    --fuente: "Poppins", "Segoe UI", sans-serif;
+
+    /* fondo degradado */
+    --color-fondo-gradient: linear-gradient(150deg, #009688, #1565c0, #2e006f);
+
+    /* colores de texto */
+    --color-letra-titulo: #ffffff;
+    --tamaño-letra-titulo: 1.5rem;
+    --color-letra-principal: #ffffff;
+    --color-letra-secundario: #212121;
+
+    /* enlaces */
+    --color-link-principal: #ffffff;
+    --color-link-secundario: #212121;
+    --color-link-hover: #f7b32b;
+    --color-link-active: #ff9100;
+
+    /* perfil / dropdown */
+    --color-perfil-borde: #ffffff;
+    --color-perfil-hover: #f7b32b;
+    --color-fondo-dropdown: #ffffff;
+    --color-fondo-hover-dropdown: #e0f2f1;
+    --color-texto-dropdown: #212121;
+    --border-redondeado-dropdown: 8px;
+    --color-dropdown-hover: #f0f0f0;
+    --color-transicion-dropdown: all 0.2s ease-in-out;
+    --color-boxshadow-dropdown: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    /***************** HOME BENEFICIARIO ******************/
+    --color-titulo-seccion: #00695c;
+    --color-fondo-card: #ffffff;
+    --borde-card: 12px;
+    --card-sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --card-hover-sombra: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --card-texto: #333333;
+
+    --color-fondo-botones-slider: #009688;
+    --color-texto-slider: #ffffff;
+    --sombra-card-slider: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --transition-slider: all 0.3s ease;
+
+    --color-fondo-boton-slider-hover: #00796b;
+    --color-no-solicitudes: #555555;
+
+    --color-slider-h3: #00695c;
+    --color-slider-h4: #26a69a;
+    --color-slider-p: #555555;
+
+    --color-estado-pendiente: #f7b32b;
+    --color-letra-estado-pendiente: #ffffff;
+    --color-estado-aprobado: #43a047;
+    --color-estado-rechazado: #e53935;
+
+    /***************** CHAT ******************/
+    --color-fondo-chat: #f9fafb;
+    --color-borde-chat: #dcdcdc;
+    --color-fondo-msg-propio: #c8e6c9;
+    --color-fondo-msg-otro: #ffffff;
+    --color-texto-chat: #333333;
+    --color-placeholder-chat: #9e9e9e;
+    --color-chat-header: #00695c;
+    --color-chat-typing: #757575;
+
+    /***************** VER DONADORES ******************/
+    --color-fondo-donadores: #f2f4f7;
+    --color-card-donador: #ffffff;
+    --borde-card-donador: 10px;
+    --sombra-card-donador: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --color-titulo-card: #1565c0;
+    --color-texto-card: #333333;
+    --color-boton-chat: #009688;
+    --color-boton-chat-hover: #00796b;
+    --color-boton-chat-texto: #ffffff;
+
+    --color-scrollbar: #00695c;
+    --color-scrollbar-thumb: #004d40;
+
+    /***************** SOLICITUD DE ALIMENTOS ******************/
+    --color-fondo-solicitud: #f2f4f7;
+    --color-card-solicitud: #ffffff;
+    --color-borde-solicitud: #dcdcdc;
+    --color-titulo-solicitud: #1565c0;
+    --color-etiqueta-solicitud: #333333;
+    --color-input-solicitud: #f9fafb;
+    --color-input-borde: #e5e7eb;
+    --color-input-focus: #009688;
+    --color-placeholder-solicitud: #888888;
+    --color-texto-solicitud: #1f2937;
+
+    --sombra-solicitud: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radio-solicitud: 12px;
+    --transition-solicitud: all 0.2s ease;
+
+    /***************** MI CUENTA ******************/
+    --color-fondo-perfil: #f2f4f7;
+    --color-card-perfil: #ffffff;
+    --color-borde-perfil: #dcdcdc;
+    --color-titulo-perfil: #1565c0;
+    --color-texto-perfil: #1f2937;
+    --color-label-perfil: #333333;
+    --color-input-fondo: #f9fafb;
+    --color-input-borde: #e5e7eb;
+    --color-input-focus: #009688;
+    --sombra-perfil: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    /* botones */
+    --btn-verde: #009688;
+    --btn-verde-hover: #00796b;
+    --btn-azul: #1565c0;
+    --btn-azul-hover: #0d47a1;
+    --btn-gris: #b0bec5;
+    --btn-gris-hover: #90a4ae;
+    --btn-amarillo: #f7b32b;
+    --btn-amarillo-hover: #f29e02;
+    --btn-rojo: #e53935;
+    --btn-rojo-hover: #c62828;
+
+
+    --color-fondo: #f2f4f7;
+    --color-card: #ffffff;
+    --color-texto: #333;
+    --color-acento: #009688;
+    --color-acento-hover: #00796b;
+    --color-sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radio-card: 16px;
+    --transicion: all 0.3s ease;
+    --fuente: "Poppins", sans-serif;
+    --btn-verde: #009688;
+    --btn-verde-hover: #00796b;
+    --btn-rojo: #e53935;
+    --btn-rojo-hover: #c62828;
+}
+
+/* Animaciones generales */
+@keyframes floatBubble {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+}
+
+/* Estilos globales */
+html,
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente);
+    background-color: var(--color-fondo-perfil);
+    color: var(--color-texto-perfil);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.18;
+    z-index: 0;
+    animation: floatBubble 10s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+body::before {
+    width: 280px;
+    height: 280px;
+    top: -120px;
+    right: -140px;
+    background: radial-gradient(circle, #009688 0%, #1565c0 80%);
+}
+
+body::after {
+    width: 220px;
+    height: 220px;
+    bottom: -90px;
+    left: -110px;
+    background: radial-gradient(circle, #2e006f 0%, #1565c0 80%);
+    animation-delay: 3s;
+}
+
+html::before,
+html::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.16;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatDiagonal 18s ease-in-out infinite alternate;
+}
+
+html::before {
+    width: 180px;
+    height: 180px;
+    top: 20%;
+    left: 10%;
+    background: radial-gradient(circle, #00bcd4 0%, #009688 80%);
+    animation-delay: 2s;
+}
+
+html::after {
+    width: 240px;
+    height: 240px;
+    bottom: 15%;
+    right: 10%;
+    background: radial-gradient(circle, #8e24aa 0%, #1565c0 80%);
+    animation-delay: 5s;
+}
+
+body::marker,
+body::selection {
+    background: transparent;
+}
+
+body {
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(0, 150, 136, 0.15) 0%, transparent 70%),
+        radial-gradient(circle at 80% 60%, rgba(98, 0, 234, 0.15) 0%, transparent 70%),
+        radial-gradient(circle at 60% 80%, rgba(21, 101, 192, 0.12) 0%, transparent 70%),
+        radial-gradient(circle at 30% 90%, rgba(46, 0, 111, 0.18) 0%, transparent 70%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: lighten;
+}
+
+@keyframes floatBubble {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(2deg) scale(1.05);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+}
+
+@keyframes floatDiagonal {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -30px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+body>* {
+    position: relative;
+    z-index: 1;
+}

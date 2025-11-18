@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Preguntas | EcoMarket</title>
+    <link rel="stylesheet" href="./css/preguntasJuego.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#Inicio">
+                <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+            </a>
+            <h1>EcoMarket</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navegacion" id="navMenu">
+            <ul>
+                <li><a href="HomeAdmin.html">Inicio</a></li>
+                <li><a href="asignaciones.html">Asignar</a></li>
+                <li><a href="bodega.html">bodega</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="preguntasJuego.html" class="active">Preguntas</a></li>
+            </ul>
+
+            <div class="perfil-menu" id="perfilMenu">
+                <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="notif" class="notif">0</span>
+                </button>
+
+                <ul class="dropdown" id="perfilDropdown">
+                    <!-- <li><a href="miCuenta.html">Mi Perfil</a></li> -->
+                    <!-- <li><a href="#" id="verMensajes">Mensajes</a></li> -->
+                    <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor-preguntas">
+        <!-- Formulario -->
+        <section class="formulario-seccion">
+            <div class="form-header">
+                <h3 id="tituloForm">Registrar Nueva Pregunta</h3>
+            </div>
+
+            <form id="preguntaForm">
+                <div class="campo">
+                    <label>Pregunta:</label>
+                    <input type="text" id="pregunta" placeholder="Escribe la pregunta..." required />
+                </div>
+
+                <div class="campo">
+                    <label>Opciones:</label>
+                    <div class="opciones">
+                        <input type="text" id="op0" placeholder="Opción 1" required />
+                        <input type="text" id="op1" placeholder="Opción 2" required />
+                        <input type="text" id="op2" placeholder="Opción 3" required />
+                        <input type="text" id="op3" placeholder="Opción 4" required />
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Respuesta Correcta:</label>
+                    <select id="correcta" required>
+                        <option value="">Selecciona la respuesta correcta</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label>Nivel:</label>
+                    <select id="nivel" required>
+                        <option value="">Selecciona el nivel</option>
+                        <option value="1">Nivel 1</option>
+                        <option value="2">Nivel 2</option>
+                        <option value="3">Nivel 3</option>
+                        <option value="4">Nivel 4</option>
+                        <option value="5">Nivel 5</option>
+                    </select>
+                </div>
+
+                <div class="acciones">
+                    <button type="submit" id="btnGuardar" class="btn-primario">
+                        <i class="fa-solid fa-save"></i> Guardar Pregunta
+                    </button>
+                    <button type="button" id="btnCancelar" class="btn-secundario">
+                        <i class="fa-solid fa-xmark"></i> Cancelar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Listado sliders -->
+        <section class="tabla-seccion">
+            <div id="nivelesContainer">
+                <!-- Sliders generados por JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/preguntasJuego.js"></script>
+</body>
+
+</html>

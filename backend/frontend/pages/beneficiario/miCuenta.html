@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/miCuenta.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon" />
+    <title>EcoMarket | Mi Cuenta</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#Inicio">
+                <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+            </a>
+            <h1>EcoMarket</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navegacion" id="navMenu">
+            <ul>
+                <li><a href="HomeBeneficiario.html">Inicio</a></li>
+                <li><a href="verDonadores.html" class="active">Donadores</a></li>
+                <li><a href="Solicitud.html">Solicitud</a></li>
+                <li><a href="misDonaciones.html" class="active">Mis Donaciones</a></li>
+            </ul>
+
+            <div class="perfil-menu" id="perfilMenu">
+                <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="notif" class="notif">0</span>
+                </button>
+
+                <ul class="dropdown" id="perfilDropdown">
+                    <li><a href="miCuenta.html">Mi Perfil</a></li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="verMensajes">
+                            <i class="fa-regular fa-comments"></i> Mensajes
+                            <span id="badgeMensajes" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="btnNotificaciones">
+                            <i class="fa-regular fa-bell"></i> Notificaciones
+                            <span id="badgeNotificaciones" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="perfil-wrapper">
+        <section class="perfil-container">
+            <form id="perfilForm">
+                <div class="perfil-header">
+                    <div class="foto-container">
+                        <div class="foto-preview">
+                            <i class="fa-solid fa-camera icono-camara"></i>
+                            <input type="file" id="inputFoto" accept="image/*" disabled />
+                        </div>
+                    </div>
+
+                    <div class="datos-principales">
+                        <label>Nombre</label>
+                        <input type="text" id="nombre" />
+
+                        <label>Apellido Paterno</label>
+                        <input type="text" id="apellidoPaterno" />
+
+                        <label>Apellido Materno</label>
+                        <input type="text" id="apellidoMaterno" />
+
+                        <label>Correo</label>
+                        <input type="email" id="correo" disabled />
+                    </div>
+                </div>
+
+                <div class="perfil-form">
+                    <div class="columna">
+                        <label>Teléfono</label>
+                        <input type="tel" id="telefono" />
+
+                        <label>Tipo de Beneficiario</label>
+                        <input type="text" id="tipoBeneficiario" disabled />
+
+                        <label>CURP / RFC</label>
+                        <input type="text" id="curpRfcBeneficiario" disabled />
+
+                        <label>Calle</label>
+                        <input type="text" id="calle" />
+
+                        <label>Número Exterior</label>
+                        <input type="text" id="numExterior" />
+
+                        <label>Número Interior</label>
+                        <input type="text" id="numInterior" />
+                    </div>
+
+                    <div class="columna">
+                        <label>Colonia</label>
+                        <input type="text" id="colonia" />
+
+                        <label>Código Postal</label>
+                        <input type="text" id="codigoPostal" />
+
+                        <label>Municipio</label>
+                        <input type="text" id="municipio" />
+
+                        <label>Estado</label>
+                        <input type="text" id="estado" />
+
+                        <label>Referencias</label>
+                        <textarea id="referencias"></textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <aside class="acciones-perfil">
+            <h3>Acciones</h3>
+            <button id="btnEditar" class="btn-verde">Editar</button>
+            <button id="btnGuardar" class="btn-azul" disabled>Guardar</button>
+            <button id="btnCancelar" class="btn-gris" disabled>Cancelar</button>
+            <hr>
+            <button id="btnSync" class="btn-amarillo">Sincronizar</button>
+            <button id="btnEliminar" class="btn-rojo">Eliminar Cuenta</button>
+        </aside>
+    </main>
+
+    <!-- archivos JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/app.js"></script>
+    <!-- <script type="module" src="./js/chat.js"></script> -->
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/miCuenta.js"></script>
+</body>
+
+</html>

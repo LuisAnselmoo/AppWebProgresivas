@@ -1,0 +1,212 @@
+@import url('./root.css');
+@import url('./header.css');
+.titulo-seccion{
+  text-align: center;
+  color: orange;
+
+}
+/* ======== NAVEGACIÓN DEL CALENDARIO ======== */
+.calendar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: var(--espaciado-md);
+}
+
+.calendar-nav h2 {
+  text-transform: capitalize;
+  font-size: var(--font-lg);
+  font-weight: bold;
+  color: var(--color-titulo-seccion);
+}
+
+.calendar-nav button {
+  background: var(--btn-verde);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: var(--transicion-principal);
+}
+
+.calendar-nav button:hover {
+  background: var(--btn-verde-hover);
+  transform: scale(1.05);
+}
+
+/* ======== CALENDARIO PRINCIPAL ======== */
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.dia-header {
+  background: var(--color-fondo-card);
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--color-titulo-solicitud);
+  box-shadow: var(--card-sombra);
+}
+
+.dia {
+  background: #fffef8;
+  min-height: 95px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: var(--transicion-principal);
+  padding: 4px 2px;
+  position: relative;
+}
+
+.dia:hover {
+  background-color: #fffbe9;
+  transform: translateY(-4px);
+}
+
+.dia span {
+  display: block;
+  font-weight: 600;
+  color: var(--color-texto-perfil);
+}
+
+.iconos-dia {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.iconos-dia i {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ======== MODAL DETALLE ======== */
+.modal-detalle {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-detalle.activo {
+  display: flex;
+}
+
+.modal-content {
+  background: #fffdf7;
+  border-radius: 16px;
+  padding: 25px 30px;
+  max-width: 680px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--btn-rojo);
+  transition: var(--transicion-principal);
+}
+.cerrar-modal:hover { transform: scale(1.1); }
+
+.modal-content h2 {
+  text-align: center;
+  color: var(--color-titulo-solicitud);
+  margin-bottom: var(--espaciado-md);
+}
+
+/* ======== TARJETAS DE DETALLE ======== */
+.detalle-card {
+  background: var(--color-fondo-card);
+  padding: var(--espaciado-md);
+  border-radius: 12px;
+  box-shadow: var(--sombra-solicitud);
+  margin-bottom: var(--espaciado-sm);
+  border-left: 6px solid transparent;
+  transition: var(--transicion-principal);
+}
+
+.detalle-card h3 {
+  margin: 0 0 6px;
+  font-size: var(--font-md);
+  color: var(--color-titulo-solicitud);
+}
+
+.detalle-card p {
+  margin: 4px 0;
+  color: var(--color-texto-solicitud);
+  font-size: var(--font-sm);
+}
+
+.detalle-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--espaciado-xs);
+}
+
+.detalle-card li {
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: var(--font-sm);
+}
+
+/* ======== COLORES SEGÚN ESTADO ======== */
+.detalle-card[data-estado="aprobado"] {
+  border-left-color: var(--btn-verde);
+}
+.detalle-card[data-estado="pendiente"] {
+  border-left-color: var(--btn-amarillo);
+}
+.detalle-card[data-estado="rechazado"] {
+  border-left-color: var(--btn-rojo);
+}
+.detalle-card[data-estado="entregada"] {
+  border-left-color: #4caf50;
+}
+
+/* ======== DISTINCIÓN POR TIPO ======== */
+.detalle-card[data-tipo="beneficiario"] {
+  background: #fff8e1;
+}
+.detalle-card[data-tipo="donador"] {
+  background: #e3f2fd;
+}
+
+/* ======== SCROLLBAR SUAVE ======== */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--btn-amarillo);
+  border-radius: 8px;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  #calendar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

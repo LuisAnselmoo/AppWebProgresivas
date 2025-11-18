@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/misEntregas.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>EcoMarket - Mis Entregas</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#Inicio">
+                <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+            </a>
+            <h1>EcoMarket</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navegacion" id="navMenu">
+            <ul>
+                <li><a href="HomeDonador.html" class="active">Inicio</a></li>
+                <li><a href="verBeneficiarios.html">Beneficiarios</a></li>
+                <li><a href="Donaciones.html">Donaciones</a></li>
+                <li><a href="misEntregas.html">Mis Entregas</a></li>
+            </ul>
+
+            <div class="perfil-menu" id="perfilMenu">
+                <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="notif" class="notif">0</span>
+                </button>
+
+                <ul class="dropdown" id="perfilDropdown">
+                    <li><a href="miCuenta.html">Mi Perfil</a></li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="verMensajes">
+                            <i class="fa-regular fa-comments"></i> Mensajes
+                            <span id="badgeMensajes" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item-with-badge">
+                        <a href="#" id="btnNotificaciones">
+                            <i class="fa-regular fa-bell"></i> Notificaciones
+                            <span id="badgeNotificaciones" class="badge">0</span>
+                        </a>
+                    </li>
+
+                    <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="titulo-seccion">Mis Donaciones y Entregas</h2>
+
+        <section class="bloque-donaciones">
+            <h3 class="subtitulo">Solicitudes de alimentos asignadas</h3>
+            <div id="solicitudesAsignadas" class="donaciones-lista"></div>
+        </section>
+
+        <section class="bloque-donaciones">
+            <h3 class="subtitulo">Donaciones aprobadas / en curso</h3>
+            <div id="donacionesAprobadas" class="donaciones-lista"></div>
+        </section>
+
+        <section class="extra-section">
+            <i class="fa-solid fa-truck icon"></i>
+            <h3>Gracias por tus donaciones</h3>
+            <p>
+                Recuerda marcar tus entregas cuando las realices.
+                Esto ayuda a mantener la trazabilidad y transparencia en cada entrega.
+            </p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/misEntregas.js"></script>
+</body>
+
+</html>

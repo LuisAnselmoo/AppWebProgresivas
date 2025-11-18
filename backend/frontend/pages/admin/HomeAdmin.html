@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/homeAdmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon">
+    <title>EcoMarket - Administrador</title>
+</head>
+
+<body>
+    <!-- encabezado -->
+    <header class="header">
+        <div class="logo">
+            <a href="#Inicio">
+                <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+            </a>
+            <h1>EcoMarket</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navegacion" id="navMenu">
+            <ul>
+                <li><a href="HomeAdmin.html">Inicio</a></li>
+                <li><a href="asignaciones.html">Asignar</a></li>
+                <li><a href="bodega.html">bodega</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="preguntasJuego.html" class="active">Preguntas</a></li>
+            </ul>
+
+            <div class="perfil-menu" id="perfilMenu">
+                <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="notif" class="notif">0</span>
+                </button>
+
+                <ul class="dropdown" id="perfilDropdown">
+                    <!-- <li><a href="miCuenta.html">Mi Perfil</a></li> -->
+                    <!-- <li><a href="#" id="verMensajes">Mensajes</a></li> -->
+                    <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h2 class="titulo-seccion">Panel General del Administrador</h2>
+        <p>
+            Bienvenido al tablero de control. Aquí puedes visualizar el rendimiento
+            general de EcoMarket: solicitudes completadas, donaciones activas y
+            tendencias semanales.
+        </p>
+
+        <!-- Contenedor de gráficas -->
+        <section class="graficas-grid">
+            <div class="grafica-card">
+                <h3><i class="fa-solid fa-utensils"></i> Entregas Completadas</h3>
+                <canvas id="graficaDona"></canvas>
+            </div>
+
+            <div class="grafica-card">
+                <h3><i class="fa-solid fa-hand-holding-heart"></i> Donaciones por Tipo</h3>
+                <canvas id="graficaBarra"></canvas>
+            </div>
+
+            <div class="grafica-card">
+                <h3><i class="fa-solid fa-chart-line"></i> Actividad Semanal</h3>
+                <canvas id="graficaLinea"></canvas>
+            </div>
+
+            <div class="grafica-card">
+                <h3><i class="fa-solid fa-spa"></i> Impacto Ambiental</h3>
+                <canvas id="graficaRadar"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./js/homeAdmin.js"></script>
+</body>
+
+</html>

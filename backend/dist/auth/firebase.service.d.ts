@@ -9,4 +9,14 @@ export declare class FirebaseService {
         email: any;
         token: any;
     }>;
+    sendPasswordResetEmail(email: string): Promise<{
+        status: string;
+        message: string;
+        data: any;
+    }>;
+    confirmPasswordReset(oobCode: string, newPassword: string): Promise<{
+        status: string;
+        message: string;
+        data: any;
+    }>;
 }

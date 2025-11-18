@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/donacion.css">
+  <link rel="icon" href="../../img/logo-EcoMarket-white.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>EcoMarket</title>
+</head>
+
+<body>
+  <!-- encabezado -->
+  <header class="header">
+    <div class="logo">
+      <a href="#Inicio">
+        <img src="../../img/logo-EcoMarket-white.svg" alt="EcoMarket Logo" class="logo-img" />
+      </a>
+      <h1>EcoMarket</h1>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="navegacion" id="navMenu">
+      <ul>
+        <li><a href="HomeDonador.html" class="active">Inicio</a></li>
+        <li><a href="verBeneficiarios.html">Beneficiarios</a></li>
+        <li><a href="Donaciones.html">Donaciones</a></li>
+        <li><a href="misEntregas.html">Mis Entregas</a></li>
+      </ul>
+
+      <div class="perfil-menu" id="perfilMenu">
+        <button class="perfil-btn" id="perfilIcon" aria-label="Perfil">
+          <i class="fa-regular fa-user"></i>
+          <span id="notif" class="notif">0</span>
+        </button>
+
+        <ul class="dropdown" id="perfilDropdown">
+          <li><a href="miCuenta.html">Mi Perfil</a></li>
+
+          <li class="menu-item-with-badge">
+            <a href="#" id="verMensajes">
+              <i class="fa-regular fa-comments"></i> Mensajes
+              <span id="badgeMensajes" class="badge">0</span>
+            </a>
+          </li>
+
+          <li class="menu-item-with-badge">
+            <a href="#" id="btnNotificaciones">
+              <i class="fa-regular fa-bell"></i> Notificaciones
+              <span id="badgeNotificaciones" class="badge">0</span>
+            </a>
+          </li>
+
+          <li><a href="#" id="btnLogout">Cerrar sesión</a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <main class="donacion">
+    <h2>Registro de Donación</h2>
+
+    <section class="contenedorPrincipal">
+      <div class="contenedorDatosDonador">
+        <h3>Información del Donador</h3>
+
+        <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" disabled></div>
+        <div class="form-group"><label for="apellidoPaterno">Apellido Paterno</label><input type="text"
+            id="apellidoPaterno" disabled></div>
+        <div class="form-group"><label for="apellidoMaterno">Apellido Materno</label><input type="text"
+            id="apellidoMaterno" disabled></div>
+        <div class="form-group"><label for="correo">Correo electrónico</label><input type="email" id="correo">
+        </div>
+        <div class="form-group"><label for="telefono">Teléfono</label><input type="tel" id="telefono"></div>
+
+        <div class="form-group"><label for="nombreEmpresa">Nombre de la Empresa</label><input type="text"
+            id="nombreEmpresa" disabled></div>
+        <div class="form-group"><label for="rfcEmpresa">RFC Empresa</label><input type="text" id="rfcEmpresa" disabled>
+        </div>
+        <div class="form-group"><label for="nombreRepresentante">Nombre Representante</label><input type="text"
+            id="nombreRepresentante" disabled></div>
+        <div class="form-group"><label for="cargoRepresentante">Cargo Representante</label><input type="text"
+            id="cargoRepresentante" disabled></div>
+        <div class="form-group"><label for="contactoAlterno">Teléfono Alterno</label><input type="tel"
+            id="contactoAlterno" placeholder="Ej. 5587654321"></div>
+        <div class="form-group"><label for="correoAlterno">Correo Alterno</label><input type="email" id="correoAlterno"
+            placeholder="contacto@empresa.com"></div>
+      </div>
+
+      <div class="contenedorProductos">
+        <h3>Productos a Donar</h3>
+
+        <div id="formProducto">
+          <div class="grid-2col">
+            <div class="form-group"><label>Nombre</label><input type="text" id="nombreProducto"
+                placeholder="Ej. Leche, Pan..."></div>
+            <div class="form-group"><label>Categoría</label>
+              <select id="categoriaProducto">
+                <option>Frutas y Verduras</option>
+                <option>Lácteos</option>
+                <option>Enlatados</option>
+                <option>Pan y Cereales</option>
+                <option>Proteínas</option>
+                <option>Bebidas</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Cantidad</label><input type="number" id="cantidadProducto"
+                placeholder="Ej. 10"></div>
+            <div class="form-group"><label>Unidad</label>
+              <select id="unidadProducto">
+                <option>kg</option>
+                <option>litros</option>
+                <option>piezas</option>
+                <option>cajas</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Perecedero</label>
+              <select id="perecederoProducto">
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Fecha de caducidad</label><input type="date" id="caducidadProducto">
+            </div>
+            <div class="form-group">
+              <label for="beneficiarioAsignado">Donar directamente a: </label>
+              <select id="beneficiarioAsignado">
+                <option value="">Selecciona un beneficiario</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Observaciones</label>
+            <textarea id="observacionesProducto"
+              placeholder="Ej. empaques dañados, productos casi a vencer..."></textarea>
+          </div>
+
+          <button class="btn btn-secondary" id="btnAgregarProducto">+ Agregar Producto</button>
+        </div>
+
+        <div class="scroll-wrapper">
+          <div id="productosContainer" class="container-card-producto"></div>
+        </div>
+      </div>
+
+      <div class="contenedorEntrega">
+        <h3>Recolección / Entrega</h3>
+        <div class="form-group"><label>Modalidad</label>
+          <select id="modalidad">
+            <option value="">Selecciona una opción</option>
+            <option>Recolección</option>
+            <option>Entrega directa</option>
+          </select>
+        </div>
+        <div class="grid-2col">
+          <div class="form-group"><label>Fecha de recolección</label><input type="date" id="fechaRecoleccion">
+          </div>
+          <div class="form-group"><label>Hora de recolección</label><input type="time" id="horaRecoleccion">
+          </div>
+        </div>
+        <div class="form-group"><label>Comentarios</label><textarea id="comentarios"
+            placeholder="Ej. dejar en recepción, horario especial..."></textarea></div>
+
+        <div class="direccionDonador">
+          <h4>Dirección del Donador</h4>
+          <div class="grid-2col">
+            <div class="form-group"><label for="calle">Calle</label><input type="text" id="calle" disabled>
+            </div>
+            <div class="form-group"><label for="numExterior">N° Exterior</label><input type="text" id="numExterior"
+                disabled></div>
+            <div class="form-group"><label for="numInterior">N° Interior</label><input type="text" id="numInterior"
+                disabled></div>
+            <div class="form-group"><label for="colonia">Colonia</label><input type="text" id="colonia" disabled></div>
+            <div class="form-group"><label for="codigoPostal">Código Postal</label><input type="text" id="codigoPostal"
+                disabled></div>
+            <div class="form-group"><label for="municipio">Municipio</label><input type="text" id="municipio" disabled>
+            </div>
+            <div class="form-group"><label for="estado">Estado</label><input type="text" id="estado" disabled></div>
+            <div class="form-group"><label for="referencias">Referencias</label><input type="text" id="referencias"
+                placeholder="Opcional"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contenedorBotones">
+      <button class="btn btn-primary" id="btnEnviar">Enviar Donación</button>
+      <button class="btn btn-secondary" type="reset">Limpiar</button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="./js/solicitudDonacion.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="./js/chat.js"></script>
+  <script type="module" src="./js/app.js"></script>
+
+</body>
+
+</html>

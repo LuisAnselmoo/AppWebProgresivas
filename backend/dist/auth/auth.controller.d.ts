@@ -19,10 +19,37 @@ export declare class AuthController {
     register(body: RegisterDto): Promise<{
         status: string;
         message: string;
-        uid: string;
+        uid?: undefined;
     } | {
         status: string;
         message: string;
-        uid?: undefined;
+        uid: string;
+    }>;
+    recoverPassword(body: {
+        correo: string;
+    }): Promise<{
+        status: string;
+        message: string;
+        data: any;
+    } | {
+        status: string;
+        message: any;
+    }>;
+    recoverPasswordSMS(body: {
+        correo: string;
+    }): Promise<{
+        status: string;
+        message: any;
+    }>;
+    resetPassword(body: {
+        code: string;
+        newPassword: string;
+    }): Promise<{
+        status: string;
+        message: string;
+        data: any;
+    } | {
+        status: string;
+        message: any;
     }>;
 }

@@ -1,0 +1,200 @@
+@import url('./root.css');
+@import url('./header.css');
+
+/* ====== CONTENEDOR GENERAL ====== */
+main {
+  padding: var(--espaciado-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#bodegaContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--espaciado-lg);
+  margin-top: var(--espaciado-md);
+}
+
+/* ====== TARJETA PRINCIPAL ====== */
+.card-bodega {
+  background: linear-gradient(180deg, #fffdf7 0%, #fffaf2 100%);
+  border-radius: var(--borde-redondeado);
+  box-shadow: var(--card-sombra);
+  padding: var(--espaciado-md);
+  transition: var(--transicion-principal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-bodega:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-hover-sombra);
+}
+
+/* ====== ENCABEZADO DE LA TARJETA ====== */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--espaciado-sm);
+}
+
+.card-header h3 {
+  color: var(--color-titulo-solicitud);
+  font-size: var(--font-lg);
+  margin: 0;
+}
+
+.card-header .badge {
+  background-color: var(--btn-amarillo);
+  color: var(--color-letra-secundario);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ====== DETALLES DE INFORMACIÓN ====== */
+.card-bodega p {
+  color: var(--color-texto-solicitud);
+  font-size: var(--font-sm);
+  margin: var(--espaciado-xs) 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-bodega p i {
+  color: var(--btn-naranja);
+}
+
+/* ====== LISTA DE PRODUCTOS ====== */
+.card-bodega h4 {
+  color: var(--color-slider-h3);
+  font-size: var(--font-md);
+  margin: var(--espaciado-sm) 0 var(--espaciado-xs);
+  border-bottom: 2px solid #ffe082;
+  padding-bottom: var(--espaciado-xs);
+}
+
+.card-bodega ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--espaciado-xs);
+}
+
+.card-bodega li {
+  background-color: var(--color-input-solicitud);
+  border: 1px solid var(--color-input-borde);
+  border-radius: var(--radio-solicitud);
+  padding: var(--espaciado-xs) var(--espaciado-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--sombra-card-slider);
+  transition: var(--transicion-principal);
+}
+
+.card-bodega li:hover {
+  background-color: #fff9c4;
+  transform: scale(1.02);
+}
+
+.card-bodega li span {
+  font-weight: 500;
+}
+
+/* ====== BOTONES DE ACCIÓN ====== */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--espaciado-sm);
+  margin-top: var(--espaciado-md);
+}
+
+.btn-reasignar,
+.btn-entregada {
+  border: none;
+  border-radius: var(--borde-redondeado);
+  padding: 0.6rem 1.2rem;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-principal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-reasignar {
+  background-color: var(--btn-amarillo);
+  color: var(--color-letra-secundario);
+}
+
+.btn-reasignar:hover {
+  background-color: var(--btn-amarillo-hover);
+  transform: translateY(-2px);
+}
+
+.btn-entregada {
+  background-color: var(--btn-verde);
+  color: var(--color-boton-chat-texto);
+}
+
+.btn-entregada:hover {
+  background-color: var(--btn-verde-hover);
+  transform: translateY(-2px);
+}
+
+/* ====== ESTADO VACÍO ====== */
+#bodegaContainer p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-no-solicitudes);
+  font-size: var(--font-md);
+  padding: var(--espaciado-lg);
+  background-color: var(--color-fondo-card);
+  border-radius: var(--borde-redondeado);
+  box-shadow: var(--card-sombra);
+}
+
+/* ====== DETALLE VISUAL ADICIONAL ====== */
+.card-bodega::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb30040, transparent 70%);
+  z-index: 0;
+}
+
+.card-bodega > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  main {
+    padding: var(--espaciado-md);
+  }
+
+  #bodegaContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .card-bodega {
+    padding: var(--espaciado-sm);
+  }
+
+  .card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

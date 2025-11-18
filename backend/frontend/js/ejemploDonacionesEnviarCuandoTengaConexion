@@ -1,0 +1,44 @@
+async function registrarDonacion(donacion) {
+  try {
+    const response = await fetch('http://localhost:3000/donaciones', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(donacion)
+    });
+
+    if (response.ok) {
+      Swal.fire('Donación registrada con éxito');
+    } else {
+      throw new Error('Error al registrar donación');
+    }
+
+  } catch (err) {
+    console.warn('[App] Sin conexión, guardando donación localmente...');
+
+    // Guardar en IndexedDB
+    const db = await openDB('ecomarket-db', 1, {
+      upgrade(db) {
+        if (!db.objectStoreNames.contains('donaciones')) {
+          db.createObjectStore('donaciones', { keyPath: 'id' });
+        }
+      },
+    });
+
+    const tx = db.transaction('donaciones', 'readwrite');
+    await tx.objectStore('donaciones').put({
+      id: Date.now(),
+      ...donacion,
+    });
+    await tx.done;
+
+    // Registrar la sincronización en el Service Worker
+    if ('serviceWorker' in navigator && 'SyncManager' in window) {
+      const reg = await navigator.serviceWorker.ready;
+      await reg.sync.register('sync-donaciones');
+      console.log('[App] Donación registrada para sincronizar luego');
+      Swal.fire('Sin conexión', 'Tu donación se enviará cuando vuelva el internet', 'info');
+    } else {
+      Swal.fire('No se pudo guardar offline');
+    }
+  }
+}

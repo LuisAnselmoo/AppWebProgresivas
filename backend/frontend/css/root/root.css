@@ -1,0 +1,51 @@
+:root {
+    /* tipo de fuente de letra */
+    --font-family: 'Roboto', sans-serif;
+
+    /* colores principales de pagina */
+    --primary-color-fondo: #373a3b;
+    --secondary-color-fondo: #434443;
+
+    /* colores de letras */
+    --primary-color-letra: #ffffff;
+    --secondary-color-letra: #000000;
+
+    /* color titulo - h1 */
+    --color-titulo: #ffffff;
+
+    /* color linear-gradient - header*/
+    --gradient-start: #303436;
+    --gradient-end: #3ce753;
+    --gradient-angle: 100deg;
+
+    /* colores box-shadow */
+    /* --sombra-color: rgba(68, 0, 255, 0.3);
+    --sombra-x: 0;
+    --sombra-y: 2px;
+    --sombra-desenfoque: 10px; */
+
+    /* color boton Iniciar Sesion */
+    --color-boton-iniciarSesion: #27ae60;
+    --color-boton-iniciarSesion-letra: #ffffff;
+
+    /******************** Formularios *******************/
+    /* color borde input - formularios Login y Registro*/
+    --color-borde-input: #ccc;
+    --color-borde-input-focus: #4CAF50;
+    --color-link-registro: #4CAF50;
+    --color-parrafo: #555;
+
+    /******************** Page: Beneficiario *******************/
+    --color-boton-cerrarSesion: #eb2121;
+    --color-boton-cerrarSesion-letra: #ffffff;
+
+    /* sombras */
+    --shadow-suave: 0 4px 10px rgba(0, 0, 0, 0.15);
+    --shadow-media: 0 8px 20px rgba(0, 0, 0, 0.25);
+    --shadow-profunda: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* box-shadow: var(--sombra-x) var(--sombra-y) var(--sombra-desenfoque) var(--sombra-color); */
+/* background: linear-gradient(var(--gradient-angle), var(--gradient-start), var(--gradient-end)); */
+
+
